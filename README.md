@@ -4,7 +4,7 @@ Persistent quiz application for admin, parent and child accounts, hosted with Ch
 
 ## Account hierarchy
 
-The fixed administrator username is `admin`. On the private Site's first visit, its signed-in owner chooses the administrator password. No production password is committed or shared by default. Admin creates parents or children linked to a parent and deletes accounts by revoking access (historical records retained). Parents create their own children, author/publish tests, assign a version to one or multiple children with a due date/timezone, and review every attempt. Children see and answer only their assignments. New parent/child accounts require changing their temporary password before use.
+The fixed administrator username is `admin`. On the private Site's first visit, its signed-in owner chooses the administrator password. No production password is committed or shared by default. Admin creates parent or child accounts for this single household and deletes accounts by revoking access (historical records retained). All parents share all children, tests, assignments and reports. Parents create child accounts, author/publish tests, assign a version to one or multiple children with a due date/timezone, and review every attempt. Children see and answer only their assignments. New parent/child accounts require changing their temporary password before use.
 
 ChatGPT Sites' owner-private access gate remains unchanged. Application credentials do not grant permission through that outer gate. For separate devices, the owner must configure permitted Site visitors; minors should use guardian-authorized access rather than an independent ChatGPT account. This release does not claim that creating an app user changes Sites sharing.
 
@@ -27,4 +27,6 @@ Requires Node 24+ (local SQLite adapter only). No third-party packages required.
 
 SQL schema migration and Drizzle journal live in `drizzle/`. Sites packages and applies these before Worker deployment. `.openai/hosting.json` retains the existing Site ID and declares D1 binding `DB`. Never run schema creation in request handlers.
 
-Production retention policy: account deletion disables access and preserves submissions for the guardian's history. Permanent data erasure, backups and configurable retention remain future administrative work; avoid collecting unnecessary child information.
+Production retention policy: account deletion disables access and preserves submissions for the household's history. Permanent data erasure, backups and configurable retention remain future administrative work; avoid collecting unnecessary child information.
+
+This Site represents exactly one household. Creator IDs on children, tests and assignments retain attribution only and do not restrict other parents. Deleting a parent removes only that parent’s access; shared children and records remain available to other parents. Child access remains scoped to their individual assignments and attempts. No schema migration is needed for this policy change.
