@@ -30,7 +30,7 @@ Difficulty advice requires at least three matching first attempts for one child,
 
 ## Coach/agent integration (§9)
 
-Parents issue short-lived credentials with selected scopes and child IDs, and can revoke them immediately. Default scope is authoring only; publish, assignment and result access require explicit adult selection. Drafts, validation, immutable publication, authorized assignments and reports are supported by the `/v1` API. Credentials are stored as hashes, never embedded in student payloads; requests are rate-limited and relevant actions audited. Coach authentication is through this scoped API, while the interactive parent UI remains household-wide. Private Sites access is a separate outer requirement for external callers.
+Parents issue credentials with calendar-month expiration (12 months by default, with longer periods supported) with selected scopes and child IDs, and can revoke them immediately. Default scope is authoring only; publish, assignment and result access require explicit adult selection. Drafts, validation, immutable publication, authorized assignments and reports are supported by the `/v1` API. Credentials are stored as hashes, never embedded in student payloads; requests are rate-limited and relevant actions audited. Coach authentication is through this scoped API, while the interactive parent UI remains household-wide. Private Sites access is a separate outer requirement for external callers.
 
 Portable JSON Schema and OpenAPI contracts are in `docs/test-schema.json` and `docs/openapi.json`. Imported definitions cannot execute code. The parent JSON import workflow remains available without an external coach credential.
 

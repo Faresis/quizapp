@@ -3,7 +3,7 @@
   "info": {
     "title": "Clearpath scoped coaching API",
     "version": "1.0.0",
-    "description": "Application credentials are separate from the private ChatGPT Sites gate. Parent-approved short-lived scopes and child grants are mandatory. Imported text/JSON is data, never executable code."
+    "description": "Application credentials are separate from the private ChatGPT Sites gate. Parent-approved revocable scopes and child grants are mandatory. Imported text/JSON is data, never executable code."
   },
   "servers": [
     {
