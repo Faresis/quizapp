@@ -89,3 +89,18 @@ test('removed coach endpoints never accept old bearer grants or signed-in parent
  const js=await (await worker.fetch(new Request('https://example.test/app.js'),{})).text();
  assert.ok(!/coachaccess|coachAccess|cpcoach_|\/api\/coach\/|OAI-Sites-Authorization/.test(js));
 });
+
+test('historical exact-match display caveat reaches parent reports and history without changing scores',async()=>{
+ const f=await fixture(),p=await f.make('Parentone'),c=await f.make('Childone','child',p.id);
+ const pair=(await f.call('/api/focus/pair',{seed:'display-history',trial_count:3},p.cookie)).data.tests;
+ const aid=await assign(f,p,c,pair[0].version_id);let a=(await f.call('/api/attempts/start',{assignment_id:aid,display_profile:'match-v2'},c.cookie)).data;
+ assert.equal(a.data.display_profile,'match-v2');assert.equal(a.data.display_concern,null);
+ a=(await action(f,c,a,{type:'submit'})).data;
+ const original=f.sql.prepare('SELECT data FROM attempts WHERE id=?').get(a.id),legacy=JSON.parse(original.data);delete legacy.display_profile;
+ f.sql.prepare('UPDATE attempts SET data=? WHERE id=?').run(JSON.stringify(legacy),a.id);
+ const before=f.sql.prepare('SELECT * FROM attempts WHERE id=?').get(a.id),versions=f.sql.prepare('SELECT * FROM versions').all();
+ const report=await f.call('/api/report?id='+a.id,undefined,p.cookie);assert.match(report.data.data.display_concern,/not established evidence/);assert.deepEqual(report.data.data.report,legacy.report);
+ const summaries=(await f.call('/api/focus/reports',undefined,p.cookie)).data.summaries;assert.match(summaries[0].display_concern,/reported on iPad/);
+ const monthly=(await f.call('/api/focus/monthly?month='+new Date(before.started_at).toISOString().slice(0,7),undefined,p.cookie)).data;assert.ok(monthly.summaries[0].display_concern);assert.equal(monthly.adaptation.eligible_attempts,0);
+ assert.deepEqual(f.sql.prepare('SELECT * FROM attempts WHERE id=?').get(a.id),before);assert.deepEqual(f.sql.prepare('SELECT * FROM versions').all(),versions);
+});

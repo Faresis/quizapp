@@ -1,0 +1,1018 @@
+[
+  {
+    "definition": {
+      "schema_version": "1.0",
+      "title": "speed accuracy",
+      "domain": "focus",
+      "intent": "training",
+      "instructions": "Press Space or Respond for ●. Withhold your response for ×. You may stop at any time.",
+      "presentation": {
+        "mode": "one_at_a_time",
+        "navigation": "forward_only"
+      },
+      "timing": {
+        "test_duration_ms": 1500000,
+        "question_duration_ms": null,
+        "pause_policy": "not_allowed"
+      },
+      "retry_policy": {
+        "retries_allowed": false,
+        "max_attempts": 1,
+        "report_score": "first"
+      },
+      "feedback": {
+        "reveal": "guardian_only"
+      },
+      "focus": {
+        "mode": "speed_accuracy",
+        "target_skill": "speed_accuracy",
+        "condition": "training",
+        "round": "A",
+        "match_group": "speed_accuracy:legacy-legibility",
+        "difficulty": "window-1800",
+        "assistance": "configured_training_cues",
+        "modality": "stimulus_stream",
+        "source": "seeded_generator",
+        "seed": "legacy-legibility"
+      },
+      "activity": {
+        "mode": "speed_accuracy",
+        "seed": "legacy-legibility",
+        "trial_count": 4,
+        "response_window_ms": 1800,
+        "exposure_ms": 650,
+        "interval_ms": 400,
+        "target_frequency": 0.7,
+        "go_stimulus": "●",
+        "no_go_stimulus": "×",
+        "switch_every": 5,
+        "interruption_ms": 5000,
+        "sequence_length": 6,
+        "strategy_cue": "",
+        "reset_cue": "Pause. Reset. Focus on the next fresh item.",
+        "rules": [
+          {
+            "instruction": "Even → Left. Odd → Right.",
+            "mapping": {
+              "2": "left",
+              "3": "right",
+              "4": "left",
+              "5": "right",
+              "6": "left",
+              "7": "right"
+            }
+          },
+          {
+            "instruction": "Even → Right. Odd → Left.",
+            "mapping": {
+              "2": "right",
+              "3": "left",
+              "4": "right",
+              "5": "left",
+              "6": "right",
+              "7": "left"
+            }
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "trial-0",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+          "reference": "81S5ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "speed_accuracy"
+          ]
+        },
+        {
+          "id": "trial-1",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: O855ll\n← O855ll    0855ll →",
+          "reference": "O855ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "left"
+          ],
+          "skill_tags": [
+            "speed_accuracy"
+          ]
+        },
+        {
+          "id": "trial-2",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+          "reference": "B5OISO",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "speed_accuracy"
+          ]
+        },
+        {
+          "id": "trial-3",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 0OO080\n← 0O1080    0OO080 →",
+          "reference": "0OO080",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "speed_accuracy"
+          ]
+        }
+      ]
+    },
+    "trials": [
+      {
+        "id": "trial-0",
+        "index": 0,
+        "stimulus": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+        "reference": "81S5ll",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-1",
+        "index": 1,
+        "stimulus": "Reference: O855ll\n← O855ll    0855ll →",
+        "reference": "O855ll",
+        "expected": "left",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-2",
+        "index": 2,
+        "stimulus": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+        "reference": "B5OISO",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 2700
+      },
+      {
+        "id": "trial-3",
+        "index": 3,
+        "stimulus": "Reference: 0OO080\n← 0O1080    0OO080 →",
+        "reference": "0OO080",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 3600
+      }
+    ]
+  },
+  {
+    "definition": {
+      "schema_version": "1.0",
+      "title": "pressure ladder",
+      "domain": "focus",
+      "intent": "training",
+      "instructions": "Press Space or Respond for ●. Withhold your response for ×. You may stop at any time.",
+      "presentation": {
+        "mode": "one_at_a_time",
+        "navigation": "forward_only"
+      },
+      "timing": {
+        "test_duration_ms": 1500000,
+        "question_duration_ms": null,
+        "pause_policy": "not_allowed"
+      },
+      "retry_policy": {
+        "retries_allowed": false,
+        "max_attempts": 1,
+        "report_score": "first"
+      },
+      "feedback": {
+        "reveal": "guardian_only"
+      },
+      "focus": {
+        "mode": "pressure_ladder",
+        "target_skill": "stress_regulation",
+        "condition": "training",
+        "round": "A",
+        "match_group": "pressure_ladder:legacy-legibility",
+        "difficulty": "window-1800",
+        "assistance": "configured_training_cues",
+        "modality": "stimulus_stream",
+        "source": "seeded_generator",
+        "seed": "legacy-legibility"
+      },
+      "activity": {
+        "mode": "pressure_ladder",
+        "seed": "legacy-legibility",
+        "trial_count": 4,
+        "response_window_ms": 1800,
+        "exposure_ms": 650,
+        "interval_ms": 400,
+        "target_frequency": 0.7,
+        "go_stimulus": "●",
+        "no_go_stimulus": "×",
+        "switch_every": 5,
+        "interruption_ms": 5000,
+        "sequence_length": 6,
+        "strategy_cue": "",
+        "reset_cue": "Pause. Reset. Focus on the next fresh item.",
+        "rules": [
+          {
+            "instruction": "Even → Left. Odd → Right.",
+            "mapping": {
+              "2": "left",
+              "3": "right",
+              "4": "left",
+              "5": "right",
+              "6": "left",
+              "7": "right"
+            }
+          },
+          {
+            "instruction": "Even → Right. Odd → Left.",
+            "mapping": {
+              "2": "right",
+              "3": "left",
+              "4": "right",
+              "5": "left",
+              "6": "right",
+              "7": "left"
+            }
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "trial-0",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+          "reference": "81S5ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "stress_regulation"
+          ]
+        },
+        {
+          "id": "trial-1",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: O855ll\n← O855ll    0855ll →",
+          "reference": "O855ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "left"
+          ],
+          "skill_tags": [
+            "stress_regulation"
+          ]
+        },
+        {
+          "id": "trial-2",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+          "reference": "B5OISO",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "stress_regulation"
+          ]
+        },
+        {
+          "id": "trial-3",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 0OO080\n← 0O1080    0OO080 →",
+          "reference": "0OO080",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "stress_regulation"
+          ]
+        }
+      ]
+    },
+    "trials": [
+      {
+        "id": "trial-0",
+        "index": 0,
+        "stimulus": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+        "reference": "81S5ll",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 3600
+      },
+      {
+        "id": "trial-1",
+        "index": 1,
+        "stimulus": "Reference: O855ll\n← O855ll    0855ll →",
+        "reference": "O855ll",
+        "expected": "left",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 3600
+      },
+      {
+        "id": "trial-2",
+        "index": 2,
+        "stimulus": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+        "reference": "B5OISO",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 2700
+      },
+      {
+        "id": "trial-3",
+        "index": 3,
+        "stimulus": "Reference: 0OO080\n← 0O1080    0OO080 →",
+        "reference": "0OO080",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      }
+    ]
+  },
+  {
+    "definition": {
+      "schema_version": "1.0",
+      "title": "error recovery",
+      "domain": "focus",
+      "intent": "training",
+      "instructions": "Press Space or Respond for ●. Withhold your response for ×. You may stop at any time.",
+      "presentation": {
+        "mode": "one_at_a_time",
+        "navigation": "forward_only"
+      },
+      "timing": {
+        "test_duration_ms": 1500000,
+        "question_duration_ms": null,
+        "pause_policy": "not_allowed"
+      },
+      "retry_policy": {
+        "retries_allowed": false,
+        "max_attempts": 1,
+        "report_score": "first"
+      },
+      "feedback": {
+        "reveal": "guardian_only"
+      },
+      "focus": {
+        "mode": "error_recovery",
+        "target_skill": "self_monitoring",
+        "condition": "training",
+        "round": "A",
+        "match_group": "error_recovery:legacy-legibility",
+        "difficulty": "window-1800",
+        "assistance": "configured_training_cues",
+        "modality": "stimulus_stream",
+        "source": "seeded_generator",
+        "seed": "legacy-legibility"
+      },
+      "activity": {
+        "mode": "error_recovery",
+        "seed": "legacy-legibility",
+        "trial_count": 4,
+        "response_window_ms": 1800,
+        "exposure_ms": 650,
+        "interval_ms": 400,
+        "target_frequency": 0.7,
+        "go_stimulus": "●",
+        "no_go_stimulus": "×",
+        "switch_every": 5,
+        "interruption_ms": 5000,
+        "sequence_length": 6,
+        "strategy_cue": "",
+        "reset_cue": "Pause. Reset. Focus on the next fresh item.",
+        "rules": [
+          {
+            "instruction": "Even → Left. Odd → Right.",
+            "mapping": {
+              "2": "left",
+              "3": "right",
+              "4": "left",
+              "5": "right",
+              "6": "left",
+              "7": "right"
+            }
+          },
+          {
+            "instruction": "Even → Right. Odd → Left.",
+            "mapping": {
+              "2": "right",
+              "3": "left",
+              "4": "right",
+              "5": "left",
+              "6": "right",
+              "7": "left"
+            }
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "trial-0",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+          "reference": "81S5ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "self_monitoring"
+          ]
+        },
+        {
+          "id": "trial-1",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: O855ll\n← O855ll    0855ll →",
+          "reference": "O855ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "left"
+          ],
+          "skill_tags": [
+            "self_monitoring"
+          ]
+        },
+        {
+          "id": "trial-2",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+          "reference": "B5OISO",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "self_monitoring"
+          ]
+        },
+        {
+          "id": "trial-3",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 0OO080\n← 0O1080    0OO080 →",
+          "reference": "0OO080",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "self_monitoring"
+          ]
+        }
+      ]
+    },
+    "trials": [
+      {
+        "id": "trial-0",
+        "index": 0,
+        "stimulus": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+        "reference": "81S5ll",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-1",
+        "index": 1,
+        "stimulus": "Reference: O855ll\n← O855ll    0855ll →",
+        "reference": "O855ll",
+        "expected": "left",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-2",
+        "index": 2,
+        "stimulus": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+        "reference": "B5OISO",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-3",
+        "index": 3,
+        "stimulus": "Reference: 0OO080\n← 0O1080    0OO080 →",
+        "reference": "0OO080",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      }
+    ]
+  },
+  {
+    "definition": {
+      "schema_version": "1.0",
+      "title": "interruption recovery",
+      "domain": "focus",
+      "intent": "training",
+      "instructions": "Press Space or Respond for ●. Withhold your response for ×. You may stop at any time.",
+      "presentation": {
+        "mode": "one_at_a_time",
+        "navigation": "forward_only"
+      },
+      "timing": {
+        "test_duration_ms": 1500000,
+        "question_duration_ms": null,
+        "pause_policy": "not_allowed"
+      },
+      "retry_policy": {
+        "retries_allowed": false,
+        "max_attempts": 1,
+        "report_score": "first"
+      },
+      "feedback": {
+        "reveal": "guardian_only"
+      },
+      "focus": {
+        "mode": "interruption_recovery",
+        "target_skill": "interruption_recovery",
+        "condition": "training",
+        "round": "A",
+        "match_group": "interruption_recovery:legacy-legibility",
+        "difficulty": "window-1800",
+        "assistance": "configured_training_cues",
+        "modality": "stimulus_stream",
+        "source": "seeded_generator",
+        "seed": "legacy-legibility"
+      },
+      "activity": {
+        "mode": "interruption_recovery",
+        "seed": "legacy-legibility",
+        "trial_count": 4,
+        "response_window_ms": 1800,
+        "exposure_ms": 650,
+        "interval_ms": 400,
+        "target_frequency": 0.7,
+        "go_stimulus": "●",
+        "no_go_stimulus": "×",
+        "switch_every": 5,
+        "interruption_ms": 5000,
+        "sequence_length": 6,
+        "strategy_cue": "",
+        "reset_cue": "Pause. Reset. Focus on the next fresh item.",
+        "rules": [
+          {
+            "instruction": "Even → Left. Odd → Right.",
+            "mapping": {
+              "2": "left",
+              "3": "right",
+              "4": "left",
+              "5": "right",
+              "6": "left",
+              "7": "right"
+            }
+          },
+          {
+            "instruction": "Even → Right. Odd → Left.",
+            "mapping": {
+              "2": "right",
+              "3": "left",
+              "4": "right",
+              "5": "left",
+              "6": "right",
+              "7": "left"
+            }
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "trial-0",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+          "reference": "81S5ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "interruption_recovery"
+          ]
+        },
+        {
+          "id": "trial-1",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: O855ll\n← O855ll    0855ll →",
+          "reference": "O855ll",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "left"
+          ],
+          "skill_tags": [
+            "interruption_recovery"
+          ]
+        },
+        {
+          "id": "trial-2",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+          "reference": "B5OISO",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "interruption_recovery"
+          ]
+        },
+        {
+          "id": "trial-3",
+          "type": "single_select",
+          "points": 1,
+          "prompt": "Reference: 0OO080\n← 0O1080    0OO080 →",
+          "reference": "0OO080",
+          "options": [
+            {
+              "id": "go",
+              "text": "Respond"
+            },
+            {
+              "id": "withhold",
+              "text": "Withhold"
+            },
+            {
+              "id": "left",
+              "text": "Left"
+            },
+            {
+              "id": "right",
+              "text": "Right"
+            }
+          ],
+          "answer_key": [
+            "right"
+          ],
+          "skill_tags": [
+            "interruption_recovery"
+          ]
+        }
+      ]
+    },
+    "trials": [
+      {
+        "id": "trial-0",
+        "index": 0,
+        "stimulus": "Reference: 81S5ll\n← 81S55l    81S5ll →",
+        "reference": "81S5ll",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-1",
+        "index": 1,
+        "stimulus": "Reference: O855ll\n← O855ll    0855ll →",
+        "reference": "O855ll",
+        "expected": "left",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-2",
+        "index": 2,
+        "stimulus": "Reference: B5OISO\n← B5OlSO    B5OISO →",
+        "reference": "B5OISO",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": true,
+        "window_ms": 1800
+      },
+      {
+        "id": "trial-3",
+        "index": 3,
+        "stimulus": "Reference: 0OO080\n← 0O1080    0OO080 →",
+        "reference": "0OO080",
+        "expected": "right",
+        "rule_index": 0,
+        "rule_instruction": "Choose the exact match with Left / Right.",
+        "switched": false,
+        "interrupted": false,
+        "window_ms": 1800
+      }
+    ]
+  }
+]

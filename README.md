@@ -40,3 +40,7 @@ Parents can generate seeded exact-match relaxed/timed pairs, assign each round, 
 Admin creates a regular **Parent** account for the coach. The coach signs in using that username and password and changes the temporary password on first login. All parents share all household children, tests, assignments, coaching sessions, observations and reports. No separate coach role, coach credentials, external API or ChatGPT tool connection is supported.
 
 See [the browser coach guide](docs/focus-coach-browser-guide.md). Legacy unpublished coaching definitions remain available to parents under **Test library → Saved drafts**. Migration 0003 removes stored coach grants and connections while preserving those drafts and all published tests, assignments, attempts and coaching records. Ordinary browser login sessions remain in place.
+
+## Exact-match legibility
+
+References and choices share a bundled font and identical typography for existing and new activities. **Character preview** checks uppercase, lowercase, digits, mixed strings and known confusable groups in the actual layouts, with font-load status. New generation excludes unverified confusable characters. Historical exact-match reports retain scores and show the reported typography caveat. See [display-quality policy and iPad acceptance](docs/character-legibility.md). Actual-iPad inspection is still required; desktop testing does not establish iPad legibility.
