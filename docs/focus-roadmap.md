@@ -28,14 +28,14 @@ Monthly reviews show scheduled/completed/elapsed sessions, per-child first-attem
 
 Difficulty advice requires at least three matching first attempts for one child, skill, difficulty, modality and assistance condition. It is advisory: parents must approve any adjustment, no automatic pressure escalation or deadline shortening occurs, and the suggested sequence-length ceiling is 20.
 
-## Coach/agent integration (§9)
+## Browser coaching (§9, updated access model)
 
-Parents issue credentials with calendar-month expiration (12 months by default, with longer periods supported) with selected scopes and child IDs, and can revoke them immediately. Default scope is authoring only; publish, assignment and result access require explicit adult selection. Drafts, validation, immutable publication, authorized assignments and reports are supported by the `/v1` API. Credentials are stored as hashes, never embedded in student payloads; requests are rate-limited and relevant actions audited. Coaches can use the native Site ChatGPT connection after a parent binds a scoped grant to the caller’s Site identity, or use the REST API with separate outer Site service access. The interactive parent UI remains household-wide. Private Sites access is a separate outer requirement for external callers.
+The admin creates a regular parent account for the coach. Coaches use the browser with exactly the same capabilities as all other parents: shared children, authoring and JSON import/export, immutable publication, due-date assignments, reports and manual review, Focus Studio, session scheduling and four-week plans, observations and monthly exports. Child-only exercise execution remains under the child's own account so history is attributed correctly.
 
-Portable JSON Schema and OpenAPI contracts are in `docs/test-schema.json` and `docs/openapi.json`. Imported definitions cannot execute code. The parent JSON import workflow remains available without an external coach credential.
+There is no separate coach role, grant, credential, external API or ChatGPT tool connection. Legacy unpublished definitions are retained as shared saved drafts in the parent test library. Portable JSON Schema remains in `docs/test-schema.json`. See `docs/focus-coach-browser-guide.md`.
 
 ## Limits of the implementation
 
 This is a browser coaching instrument, not validated psychometric testing or tamper-proof proctoring. Display/input hardware, network conditions, fixed protocol order and practice effects limit interpretation. Client-reported measurements can be manipulated; server deadlines protect acceptance but do not establish scientific latency. Drill accuracy alone does not establish broad attention improvement or a diagnosis. Physical keyboard and touchscreen latency must be assessed on the actual devices used.
 
-All changes are additive. Existing accounts, test versions, assignments and attempts are preserved. Older attempts without novelty/timing fields are labelled unknown rather than retrospectively inventing measurements.
+Household records are preserved. Existing accounts, test versions, assignments and attempts are preserved. Older attempts without novelty/timing fields are labelled unknown rather than retrospectively inventing measurements.

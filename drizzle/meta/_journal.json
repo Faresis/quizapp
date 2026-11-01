@@ -1,1 +1,34 @@
-{"version": "7", "dialect": "sqlite", "entries": [{"idx": 0, "version": "6", "when": 1793556000000, "tag": "0000_accounts", "breakpoints": true}, {"idx": 1, "version": "6", "when": 1793556000001, "tag": "0001_focus_coaching", "breakpoints": true}, {"idx": 2, "version": "6", "when": 1793556000002, "tag": "0002_chatgpt_coach", "breakpoints": true}]}
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1793556000000,
+      "tag": "0000_accounts",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1793556000001,
+      "tag": "0001_focus_coaching",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1793556000002,
+      "tag": "0002_chatgpt_coach",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1793556000003,
+      "tag": "0003_parent_coaching",
+      "breakpoints": true
+    }
+  ]
+}
