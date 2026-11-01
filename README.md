@@ -12,13 +12,13 @@ ChatGPT Sites' owner-private access gate remains unchanged. Application credenti
 
 Published versions are immutable. New versions apply only to new assignments. Due dates are calendar reminders, not hard lockout deadlines. Overdue tests remain available; test timers start with an attempt. Each child has an individual assignment and history, preserving retakes. Answers and progress persist in D1, not browser storage. Resume retains deadlines. Server-owned timestamps, optimistic concurrency and unique attempt constraints enforce timing/retry rules. Normal browser timing and network latency are approximate, not laboratory reaction time. Draft answers that have not reached the server cannot be recovered from a disconnected/closed page.
 
-Supported content: single/multiple select, short exact or explicitly normalized text (normalization via JSON), extended/manual grading, both presentation modes, navigation policies, whole-test/item/combined timing, after-attempt/parent-only/never feedback, import/export and parent manual review. Rapid Go/No-Go and other specialized stimulus mechanics, coach grants, advanced dashboards, scheduled notifications and a full question bank are not implemented in this release.
+Supported content: single/multiple select, short exact or explicitly normalized text (normalization via JSON), extended/manual grading, both presentation modes, navigation policies, whole-test/item/combined timing, after-attempt/parent-only/never feedback, import/export and parent manual review. Focus Studio additionally supports timed stimulus protocols, coaching sessions, monthly reviews and scoped external-coach credentials. Scheduled notifications and a full reusable question bank remain outside this release.
 
 Earlier browser-local prototype records are not automatically imported. Portable exported definitions can be imported into a parent's account. Never publish answer keys to children; the API strips keys until the reveal policy permits them.
 
 ## Development
 
-Requires Node 24+ (local SQLite adapter only). No third-party packages required.
+Requires Node 24+ (local SQLite adapter only). No third-party packages required. Schema migrations are additive; the local preview applies them separately from production.
 
 - `npm test`: policy and API integration tests using real SQLite with a D1 adapter.
 - `npm run build`: produces one ESM Worker with embedded assets.
@@ -33,4 +33,4 @@ This Site represents exactly one household. Creator IDs on children, tests and a
 
 ## Focus Studio
 
-Parents can generate seeded exact-match relaxed/timed pairs, assign each round, and compare completed rounds for the same child. Focus metadata and previously-seen content labels persist with attempts. Reports and JSON/CSV exports separate first attempts and retakes and flag compromised comparisons. See `docs/focus-roadmap.md` for the implemented milestone and remaining Part II requirements. This is the first increment, not the full rapid-stimulus coaching suite.
+Parents can generate seeded exact-match relaxed/timed pairs, assign each round, and compare completed rounds for the same child. Focus metadata and previously-seen content labels persist with attempts. Reports and JSON/CSV exports separate first attempts and retakes and flag compromised comparisons. See `docs/focus-roadmap.md` for the implemented milestone and remaining Part II requirements. The coaching suite now includes rapid stimulus protocols, fixed-duration sessions, a four-week planner, monthly reviews, observations and scoped agent integration. Browser timing and validity limitations are documented explicitly.

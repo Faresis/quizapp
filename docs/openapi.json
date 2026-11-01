@@ -1,0 +1,597 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Clearpath scoped coaching API",
+    "version": "1.0.0",
+    "description": "Application credentials are separate from the private ChatGPT Sites gate. Parent-approved short-lived scopes and child grants are mandatory. Imported text/JSON is data, never executable code."
+  },
+  "servers": [
+    {
+      "url": "https://clearpath-quiz-studio.faresis.chatgpt.site"
+    }
+  ],
+  "paths": {
+    "/v1/tests": {
+      "post": {
+        "summary": "Create a validated draft; requires tests:write.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "definition": {
+                    "$ref": "#/components/schemas/Test"
+                  },
+                  "activity_config": {
+                    "type": "object",
+                    "description": "Optional stimulus-protocol configuration instead of definition. Server generates trial questions and answer keys.",
+                    "required": [
+                      "mode",
+                      "seed"
+                    ],
+                    "properties": {
+                      "mode": {
+                        "enum": [
+                          "go_no_go",
+                          "rule_switching",
+                          "sustained_vigilance",
+                          "speed_accuracy",
+                          "interruption_recovery",
+                          "pressure_ladder",
+                          "error_recovery"
+                        ]
+                      },
+                      "seed": {
+                        "type": "string"
+                      },
+                      "trial_count": {
+                        "type": "integer",
+                        "minimum": 4,
+                        "maximum": 240
+                      },
+                      "response_window_ms": {
+                        "type": "integer",
+                        "minimum": 300,
+                        "maximum": 10000
+                      },
+                      "exposure_ms": {
+                        "type": "integer",
+                        "minimum": 100
+                      },
+                      "interval_ms": {
+                        "type": "integer",
+                        "minimum": 100
+                      },
+                      "intent": {
+                        "enum": [
+                          "training",
+                          "assessment"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tests/{id}/validate": {
+      "post": {
+        "summary": "Validate a draft owned by this credential; requires tests:write.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/tests/{id}/versions": {
+      "post": {
+        "summary": "Publish an immutable version; requires tests:publish.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/assignments": {
+      "post": {
+        "summary": "Assign to explicitly granted children; requires assignments:write:linked.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "version_id": {
+                    "type": "string"
+                  },
+                  "child_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "due_date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "timezone": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/assignments/{id}/attempts": {
+      "get": {
+        "summary": "List attempts for a granted child; requires results:read:linked.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/attempts/{id}/report": {
+      "get": {
+        "summary": "Read an authorized report; requires results:read:linked.",
+        "security": [
+          {
+            "coachBearer": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "401": {
+            "description": "Missing/expired/revoked credential"
+          },
+          "403": {
+            "description": "Missing scope or child outside grant"
+          },
+          "429": {
+            "description": "Rate limit"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "coachBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Test": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "Clearpath published test",
+        "type": "object",
+        "required": [
+          "title",
+          "domain",
+          "intent",
+          "presentation",
+          "timing",
+          "retry_policy",
+          "feedback",
+          "questions"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intent": {
+            "enum": [
+              "training",
+              "assessment"
+            ]
+          },
+          "presentation": {
+            "type": "object",
+            "required": [
+              "mode",
+              "navigation"
+            ],
+            "properties": {
+              "mode": {
+                "enum": [
+                  "one_at_a_time",
+                  "all_at_once"
+                ]
+              },
+              "navigation": {
+                "enum": [
+                  "free",
+                  "forward_only",
+                  "sequential_with_back"
+                ]
+              }
+            }
+          },
+          "timing": {
+            "type": "object",
+            "required": [
+              "pause_policy"
+            ],
+            "properties": {
+              "test_duration_ms": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "question_duration_ms": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "pause_policy": {
+                "const": "not_allowed"
+              }
+            }
+          },
+          "retry_policy": {
+            "type": "object",
+            "required": [
+              "retries_allowed",
+              "max_attempts",
+              "report_score"
+            ],
+            "properties": {
+              "retries_allowed": {
+                "type": "boolean"
+              },
+              "max_attempts": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "cooldown_seconds": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "report_score": {
+                "enum": [
+                  "first",
+                  "latest",
+                  "best",
+                  "all"
+                ]
+              }
+            }
+          },
+          "feedback": {
+            "type": "object",
+            "required": [
+              "reveal"
+            ],
+            "properties": {
+              "reveal": {
+                "enum": [
+                  "after_attempt",
+                  "guardian_only",
+                  "never"
+                ]
+              }
+            }
+          },
+          "questions": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 500,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "type",
+                "prompt",
+                "points"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "enum": [
+                    "single_select",
+                    "multi_select",
+                    "free_text_short",
+                    "free_text_extended"
+                  ]
+                },
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "points": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "text"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "answer_key": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "scoring": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "focus": {
+            "type": "object",
+            "required": [
+              "mode",
+              "target_skill",
+              "condition",
+              "round",
+              "match_group",
+              "difficulty",
+              "assistance"
+            ]
+          },
+          "activity": {
+            "type": "object",
+            "required": [
+              "mode",
+              "seed",
+              "trial_count",
+              "sequence_length",
+              "response_window_ms",
+              "exposure_ms",
+              "interval_ms",
+              "target_frequency"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "presentation": {
+                  "properties": {
+                    "mode": {
+                      "const": "all_at_once"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "timing": {
+                  "properties": {
+                    "question_duration_ms": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clearpath published test",
+  "type": "object",
+  "required": [
+    "title",
+    "domain",
+    "intent",
+    "presentation",
+    "timing",
+    "retry_policy",
+    "feedback",
+    "questions"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent": {
+      "enum": [
+        "training",
+        "assessment"
+      ]
+    },
+    "presentation": {
+      "type": "object",
+      "required": [
+        "mode",
+        "navigation"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "one_at_a_time",
+            "all_at_once"
+          ]
+        },
+        "navigation": {
+          "enum": [
+            "free",
+            "forward_only",
+            "sequential_with_back"
+          ]
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "pause_policy"
+      ],
+      "properties": {
+        "test_duration_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "question_duration_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pause_policy": {
+          "const": "not_allowed"
+        }
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "required": [
+        "retries_allowed",
+        "max_attempts",
+        "report_score"
+      ],
+      "properties": {
+        "retries_allowed": {
+          "type": "boolean"
+        },
+        "max_attempts": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "cooldown_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "report_score": {
+          "enum": [
+            "first",
+            "latest",
+            "best",
+            "all"
+          ]
+        }
+      }
+    },
+    "feedback": {
+      "type": "object",
+      "required": [
+        "reveal"
+      ],
+      "properties": {
+        "reveal": {
+          "enum": [
+            "after_attempt",
+            "guardian_only",
+            "never"
+          ]
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "prompt",
+          "points"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "single_select",
+              "multi_select",
+              "free_text_short",
+              "free_text_extended"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "points": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "text"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "answer_key": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scoring": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "focus": {
+      "type": "object",
+      "required": [
+        "mode",
+        "target_skill",
+        "condition",
+        "round",
+        "match_group",
+        "difficulty",
+        "assistance"
+      ]
+    },
+    "activity": {
+      "type": "object",
+      "required": [
+        "mode",
+        "seed",
+        "trial_count",
+        "sequence_length",
+        "response_window_ms",
+        "exposure_ms",
+        "interval_ms",
+        "target_frequency"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "presentation": {
+            "properties": {
+              "mode": {
+                "const": "all_at_once"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "timing": {
+            "properties": {
+              "question_duration_ms": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
