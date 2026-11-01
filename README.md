@@ -30,3 +30,7 @@ SQL schema migration and Drizzle journal live in `drizzle/`. Sites packages and 
 Production retention policy: account deletion disables access and preserves submissions for the household's history. Permanent data erasure, backups and configurable retention remain future administrative work; avoid collecting unnecessary child information.
 
 This Site represents exactly one household. Creator IDs on children, tests and assignments retain attribution only and do not restrict other parents. Deleting a parent removes only that parent’s access; shared children and records remain available to other parents. Child access remains scoped to their individual assignments and attempts. No schema migration is needed for this policy change.
+
+## Focus Studio
+
+Parents can generate seeded exact-match relaxed/timed pairs, assign each round, and compare completed rounds for the same child. Focus metadata and previously-seen content labels persist with attempts. Reports and JSON/CSV exports separate first attempts and retakes and flag compromised comparisons. See `docs/focus-roadmap.md` for the implemented milestone and remaining Part II requirements. This is the first increment, not the full rapid-stimulus coaching suite.

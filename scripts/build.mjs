@@ -1,9 +1,10 @@
 import {readFile,writeFile,mkdir,rm,copyFile} from 'node:fs/promises';
 const read=p=>readFile(new URL('../'+p,import.meta.url),'utf8');
-const core=(await read('lib/quiz-engine.mjs')).replaceAll('export ','');
-const api=(await read('server/api.mjs')).replace(/^import .*?;\n/,'').replaceAll('export ','');
+const focus=(await read('lib/focus-engine.mjs')).replaceAll('export ','');
+const core=(await read('lib/quiz-engine.mjs')).replace(/^import .*?;\n/,'').replaceAll('export ','');
+const api=(await read('server/api.mjs')).replace(/^import .*?;\n/gm,'').replaceAll('export ','');
 const html=await read('web/index.html'),css=await read('web/style.css'),js=await read('web/app.js');
 const assets=JSON.stringify({'/':{type:'text/html; charset=utf-8',text:html},'/style.css':{type:'text/css; charset=utf-8',text:css},'/app.js':{type:'text/javascript; charset=utf-8',text:js}});
-const code=core+'\n'+api+'\nconst assets='+assets+`;\nexport default {async fetch(request,env){const path=new URL(request.url).pathname;if(path.startsWith('/api/'))return api(request,env);const asset=assets[path];return new Response(asset?asset.text:'Not found',{status:asset?200:404,headers:{'Content-Type':asset?.type||'text/plain','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self' https://chatgpt.com https://*.chatgpt.com"}})}};\n`;
+const code=focus+'\n'+core+'\n'+api+'\nconst assets='+assets+`;\nexport default {async fetch(request,env){const path=new URL(request.url).pathname;if(path.startsWith('/api/'))return api(request,env);const asset=assets[path];return new Response(asset?asset.text:'Not found',{status:asset?200:404,headers:{'Content-Type':asset?.type||'text/plain','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'self' https://chatgpt.com https://*.chatgpt.com"}})}};\n`;
 await rm(new URL('../dist',import.meta.url),{recursive:true,force:true});await mkdir(new URL('../dist/server',import.meta.url),{recursive:true});await mkdir(new URL('../dist/.openai',import.meta.url),{recursive:true});await writeFile(new URL('../dist/server/index.js',import.meta.url),code);await copyFile(new URL('../.openai/hosting.json',import.meta.url),new URL('../dist/.openai/hosting.json',import.meta.url));
 console.log('Built Worker with embedded web assets.');
