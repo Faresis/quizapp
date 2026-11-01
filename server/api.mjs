@@ -1,3 +1,4 @@
+import {siteMcp,coachConnection} from './mcp.mjs';
 import {coachApi} from './coach-api.mjs';
 import {coaching} from './coaching.mjs';
 import {activityPublic,activityReport} from '../lib/activity-engine.mjs';
@@ -31,6 +32,7 @@ function viewAttempt(row,a,u){const d=JSON.parse(row.data),finished=row.state!==
 export async function api(request,env){try{const db=env.DB;if(!db)return json({error:'Database binding is not configured.'},503);const url=new URL(request.url),path=url.pathname,method=request.method;
  if(method!=='GET'){const origin=request.headers.get('origin');if(origin&&origin!==url.origin)fail(403,'Cross-site requests are not permitted.');if(!request.headers.get('content-type')?.includes('application/json'))fail(415,'Send application/json.');}
  let b={};if(method!=='GET'){const raw=await request.text();if(raw.length>1500000)fail(413,'Request is too large.');try{b=JSON.parse(raw)}catch{fail(400,'Invalid JSON.')}if(!b||typeof b!=='object'||Array.isArray(b))fail(400,'Expected a JSON object.');}
+ if(path==='/mcp')return await siteMcp({db,u:null,path,b,request,one,rows,run,audit,assignment,attempt,viewAttempt,fail,id,now,json,digest});
  if(path==='/api/session'&&method==='GET'){const exists=await one(db,"SELECT id FROM users WHERE id='admin'");const u=await actor(db,request);return json({user:u?publicUser(u):null,setup_needed:!exists});}
  if(path==='/api/setup'&&method==='POST'){
   // Hosting remains owner-private; additionally require Sites' authenticated identity for first bootstrap.
@@ -42,6 +44,7 @@ export async function api(request,env){try{const db=env.DB;if(!db)return json({e
  if(path==='/api/logout'&&method==='POST'){const token=(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('clearpath_session='))?.slice(18);if(token)await run(db,'DELETE FROM sessions WHERE token_hash=?',await digest(token));return json({ok:true},200,{'Set-Cookie':cookie(request,'',true)});}
  if(path==='/api/password'&&method==='POST'){if(!await verify(b.current_password,u.password_hash))fail(403,'The current password is incorrect.');const hash=await hashPassword(password(b.new_password));await db.batch([db.prepare('UPDATE users SET password_hash=?,must_change=0 WHERE id=?').bind(hash,u.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(u.id)]);await audit(db,u.id,'change_password',u.id);return json({ok:true},200,{'Set-Cookie':cookie(request,'',true)});}
  if(u.must_change)fail(403,'Change your temporary password before continuing.');
+ const connectionResponse=await coachConnection({db,u,path,b,request,one,run,audit,fail,now,json});if(connectionResponse)return connectionResponse;
  const coachResponse=await coachApi({db,u,path,b,request,one,rows,run,audit,assignment,attempt,viewAttempt,fail,id,now,json,digest});if(coachResponse)return coachResponse;
  const extra=await coaching({db,u,path,b,request,one,rows,run,audit,assignment,attempt,updateAttempt,viewAttempt,fail,id,now,json});if(extra)return extra;
  if(path==='/api/users'&&method==='GET'){role(u,'admin','parent');return json({users:(await rows(db,u.role==='admin'?"SELECT * FROM users WHERE role!='admin' ORDER BY created_at DESC":"SELECT * FROM users WHERE role='child' ORDER BY created_at DESC")).map(publicUser)});}

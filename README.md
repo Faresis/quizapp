@@ -34,3 +34,7 @@ This Site represents exactly one household. Creator IDs on children, tests and a
 ## Focus Studio
 
 Parents can generate seeded exact-match relaxed/timed pairs, assign each round, and compare completed rounds for the same child. Focus metadata and previously-seen content labels persist with attempts. Reports and JSON/CSV exports separate first attempts and retakes and flag compromised comparisons. See `docs/focus-roadmap.md` for the implemented milestone and remaining Part II requirements. The coaching suite now includes rapid stimulus protocols, fixed-duration sessions, a four-week planner, monthly reviews, observations and scoped agent integration. Browser timing and validity limitations are documented explicitly.
+
+## ChatGPT coach connection
+
+Use the private Clearpath app created by Sites. A parent must authorize the current ChatGPT account with a selected coach grant under Coach access; tools inherit its scopes, selected children, expiry and revocation. No raw token belongs in a chat prompt. See `docs/chatgpt-coach-connection.md` for setup, production diagnostic results and the separate two-header route for HTTP clients.
