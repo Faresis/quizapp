@@ -1,0 +1,30 @@
+{
+  "id": "focus-baseline-02-relaxed",
+  "kind": "exercise",
+  "title": "Session 2 · Matched baseline · Relaxed",
+  "description": "Fresh exact-match assessment with eight six-character items and the conservative alphabet.",
+  "revision": 1,
+  "generator": {
+    "type": "focus_pair",
+    "round": "relaxed",
+    "config": {
+      "seed": "focus-baseline-02-2026-11-07",
+      "trial_count": 8,
+      "sequence_length": 6,
+      "seconds_per_item": 30,
+      "target_skill": "selective_attention",
+      "distractor_distance": 1,
+      "confusable_groups": [
+        "AC",
+        "EF",
+        "HJ",
+        "KN",
+        "PQ",
+        "RT",
+        "UV",
+        "XY",
+        "3479"
+      ]
+    }
+  }
+}

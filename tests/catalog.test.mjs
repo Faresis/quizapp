@@ -39,7 +39,7 @@ function assignment(kind='test',id='arithmetic-starter',extra={}){
 test('repository catalog compiles deterministically and cascades definition changes into course fingerprints',()=>{
  const a=compileCatalog(files(),digest),b=compileCatalog([...files()].reverse(),digest);assert.equal(a.fingerprint,b.fingerprint);
  const changed=files();changed.find(e=>e.data.id==='focus-match-relaxed').data.definition.questions[0].prompt+=' Updated instructions.';
- const c=compileCatalog(changed,digest);assert.notEqual(c.sessions[0].fingerprint,a.sessions[0].fingerprint);assert.notEqual(c.courses[0].fingerprint,a.courses[0].fingerprint);
+ const c=compileCatalog(changed,digest);assert.notEqual(c.sessions.find(s=>s.id==='focus-starter-session').fingerprint,a.sessions.find(s=>s.id==='focus-starter-session').fingerprint);assert.notEqual(c.courses[0].fingerprint,a.courses[0].fingerprint);
  assert.equal(canonicalJson({b:1,a:2}),canonicalJson({a:2,b:1}));
 });
 
@@ -81,7 +81,7 @@ test('course enrollment schedules dated sessions and exercises, with fixed sessi
  const f=fixture();const r=await f.call('/api/catalog/assign',assignment('course','focus-first-week',{child_ids:['childA','childB']}));assert.equal(r.status,201,JSON.stringify(r.data));
  assert.equal(f.sql.prepare('SELECT count(*) n FROM catalog_enrollments').get().n,2);
  assert.equal(f.sql.prepare('SELECT count(*) n FROM assignments').get().n,6);
- const sessions=(await f.call('/api/focus/sessions',undefined,'childA')).data.sessions;assert.equal(sessions.length,1);assert.equal(sessions[0].duration_ms,1500000);assert.equal(sessions[0].scheduled_for,'2026-11-09');assert.equal(sessions[0].data.catalog_instructions,base.sessions[0].instructions);
+ const sessions=(await f.call('/api/focus/sessions',undefined,'childA')).data.sessions;assert.equal(sessions.length,1);assert.equal(sessions[0].duration_ms,1500000);assert.equal(sessions[0].scheduled_for,'2026-11-09');assert.equal(sessions[0].data.catalog_instructions,base.sessions.find(s=>s.id==='focus-starter-session').instructions);
  const courses=(await f.call('/api/catalog/enrollments',undefined,'childA')).data.enrollments;assert.equal(courses[0].total,3);assert.deepEqual(courses[0].items.map(x=>x.due_date),['2026-11-09','2026-11-09','2026-11-10']);
  assert.equal((await f.call('/api/catalog/enrollments',undefined,'parentB')).data.enrollments.length,2);
  const aid=courses[0].items[0].assignment_id;assert.equal((await f.call('/api/attempts/start',{assignment_id:aid},'childA')).status,403);
