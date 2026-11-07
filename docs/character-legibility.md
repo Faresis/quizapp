@@ -17,8 +17,8 @@ New stimulus protocols store `alphabet_policy: clear-v2`. Existing protocols wit
 
 The updated browser sends rendering profile `match-v2` after loading the font; the server records it only when supplied. An older tab that stays open across publication cannot silently acquire the new profile. This is browser-reported rendering metadata, not independent hardware or legibility verification. Earlier/unrecorded exact-match attempts show an explicit caveat that I/l legibility was reported on iPad and the attempt's display was not verified. This does not assert the same device or defect for every historical attempt. The original baseline falls within this caution; an affected error is not established evidence of an attention lapse. Original answers, test versions and stored scores remain untouched. Caveats appear in reports, history, monthly review and JSON/CSV exports. Flagged histories are excluded from advisory adaptation and clean matched comparisons. Comparisons across differing profiles are also marked ineligible.
 
-## Actual-device acceptance (pending)
+## Actual-device acceptance (waived by user)
 
 Open **Character preview** on the learner's actual iPad in Safari at normal zoom. Confirm the bundled-font success status, then inspect `I/l/1`, `O/0/o`, `S/5/s`, `B/8/b`, `G/6/g`, `Z/2/z`, `rn/m`, `cl/d` and `vv/w` in references and choices, plus uppercase/lowercase/digit/mixed-case samples. The preview includes both the question and timed activity layouts and creates no attempt or score.
 
-Record iPad model, iPadOS/Safari version, zoom, font-load result and each visual distinction in GitHub issue #1. Desktop browser QA verifies implementation and loading only. It cannot establish iPad legibility; keep the issue open and confusable characters excluded until this device check is complete.
+The user waived this acceptance check and issue #1 was closed. Desktop browser QA verified implementation and loading only; no actual-iPad legibility verification is claimed. Conservative character exclusions remain enabled.

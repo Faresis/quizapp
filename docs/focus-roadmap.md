@@ -14,9 +14,9 @@
 
 ## Sessions and planning
 
-Parents schedule two or three immutable rounds for one child with one declared primary skill. Coached sessions and monthly reviews last at most 25 minutes (2-minute objective, 4-minute technique, 15-minute exercises, 4-minute debrief). Independent sessions last at most 8 minutes (1/6/1 agenda). Start/end times are server-owned and cannot be reset by refresh or a repeated start. Child and parent can complete early; unfinished attempts are retained as interrupted. Session-bound rounds cannot start before the session or after its end.
+GitHub session templates define two or three immutable rounds; parents schedule them for one child with one declared primary skill. Coached sessions and monthly reviews last at most 25 minutes (2-minute objective, 4-minute technique, 15-minute exercises, 4-minute debrief). Independent sessions last at most 8 minutes (1/6/1 agenda). Start/end times are server-owned and cannot be reset by refresh or a repeated start. Child and parent can complete early; unfinished attempts are retained as interrupted. Session-bound rounds cannot start before the session or after its end.
 
-The four-week planner schedules two coached and three independent sessions per week, replacing the second coached session in week four with a monthly review. It generates new seeded variants rather than blindly reusing diagnostic items. A retained request ID makes retries safe. Planning generated sessions does not send reminders or notifications.
+Multi-week plans are authored as GitHub courses with explicit day offsets and fresh seeded exercise references. Parents choose a start date and children when enrolling. Retained request IDs make submission retries safe. Courses do not send reminders or notifications. The former runtime four-week generator is replaced by repository-authored plans.
 
 ## Measurement and reports
 
@@ -28,11 +28,11 @@ Monthly reviews show scheduled/completed/elapsed sessions, per-child first-attem
 
 Difficulty advice requires at least three matching first attempts for one child, skill, difficulty, modality and assistance condition. It is advisory: parents must approve any adjustment, no automatic pressure escalation or deadline shortening occurs, and the suggested sequence-length ceiling is 20.
 
-## Browser coaching (§9, updated access model)
+## Repository coaching (§9, current workflow)
 
-The admin creates a regular parent account for the coach. Coaches use the browser with exactly the same capabilities as all other parents: shared children, authoring and JSON import/export, immutable publication, due-date assignments, reports and manual review, Focus Studio, session scheduling and four-week plans, observations and monthly exports. Child-only exercise execution remains under the child's own account so history is attributed correctly.
+Coaches author reusable content in `content/` and submit GitHub pull requests. Reviewed changes are merged, validated and built, then the ChatGPT Site is redeployed. A coach needs no Clearpath login for authoring. All parents can browse the deployed catalog, assign tests or exercises, schedule session templates and enroll children in dated courses. Accounts, child-specific schedules, responses, scores, sessions, observations and reports remain in D1. Existing work retains immutable content snapshots; older definitions remain exportable from Test archive.
 
-There is no separate coach role, grant, credential, external API or ChatGPT tool connection. Legacy unpublished definitions are retained as shared saved drafts in the parent test library. Portable JSON Schema remains in `docs/test-schema.json`. See `docs/focus-coach-browser-guide.md`.
+There is no separate coach role, token, external coach API or ChatGPT tool connection. Parent reporting, manual grading, comparison, observation and monthly-export responsibilities remain in the browser. See `content/README.md` for the PR/publication process and `docs/focus-coach-browser-guide.md` for parent and child use.
 
 ## Limits of the implementation
 

@@ -1,0 +1,79 @@
+{
+  "id": "arithmetic-starter",
+  "kind": "quiz",
+  "title": "Arithmetic warm-up",
+  "description": "A short reusable mathematics quiz.",
+  "revision": 1,
+  "definition": {
+    "presentation": {
+      "mode": "one_at_a_time",
+      "navigation": "free"
+    },
+    "timing": {
+      "test_duration_ms": null,
+      "question_duration_ms": null,
+      "pause_policy": "not_allowed"
+    },
+    "retry_policy": {
+      "retries_allowed": true,
+      "max_attempts": 2,
+      "cooldown_seconds": 0,
+      "report_score": "all"
+    },
+    "feedback": {
+      "reveal": "after_attempt"
+    },
+    "title": "Arithmetic warm-up",
+    "domain": "mathematics",
+    "intent": "training",
+    "instructions": "Choose the correct answer. Take a comfortable pace.",
+    "questions": [
+      {
+        "id": "add",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "What is 7 + 5?",
+        "options": [
+          {
+            "id": "a",
+            "text": "11"
+          },
+          {
+            "id": "b",
+            "text": "12"
+          },
+          {
+            "id": "c",
+            "text": "13"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ]
+      },
+      {
+        "id": "multiply",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "What is 3 \u00d7 4?",
+        "options": [
+          {
+            "id": "a",
+            "text": "7"
+          },
+          {
+            "id": "b",
+            "text": "10"
+          },
+          {
+            "id": "c",
+            "text": "12"
+          }
+        ],
+        "answer_key": [
+          "c"
+        ]
+      }
+    ]
+  }
+}

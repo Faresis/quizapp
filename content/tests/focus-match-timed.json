@@ -1,0 +1,17 @@
+{
+  "id": "focus-match-timed",
+  "kind": "exercise",
+  "title": "Exact match \u00b7 timed",
+  "description": "Fresh seeded character comparison with the conservative alphabet.",
+  "revision": 1,
+  "generator": {
+    "type": "focus_pair",
+    "round": "timed",
+    "config": {
+      "seed": "catalog-focus-starter-2026-11",
+      "trial_count": 8,
+      "sequence_length": 6,
+      "seconds_per_item": 12
+    }
+  }
+}

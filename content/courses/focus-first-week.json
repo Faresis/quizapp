@@ -1,0 +1,19 @@
+{
+  "id": "focus-first-week",
+  "kind": "course",
+  "title": "Focus practice \u00b7 first week",
+  "description": "A starter sequence combining coaching and independent inhibition practice.",
+  "revision": 1,
+  "steps": [
+    {
+      "type": "session",
+      "ref": "focus-starter-session",
+      "day_offset": 0
+    },
+    {
+      "type": "test",
+      "ref": "focus-inhibition",
+      "day_offset": 1
+    }
+  ]
+}

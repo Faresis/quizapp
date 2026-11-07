@@ -1,0 +1,14 @@
+{
+  "id": "focus-starter-session",
+  "kind": "session",
+  "title": "Exact-match coaching session",
+  "description": "A relaxed round and a timed round with one primary skill.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "Discuss a comfortable checking strategy first. Alternate round order deliberately; stop safely if tired.",
+  "rounds": [
+    "focus-match-relaxed",
+    "focus-match-timed"
+  ]
+}

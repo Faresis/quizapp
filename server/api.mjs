@@ -1,3 +1,4 @@
+import {catalogApi} from './catalog.mjs';
 import {coaching} from './coaching.mjs';
 import {activityPublic,activityReport} from '../lib/activity-engine.mjs';
 import {generateFocusPair,itemFingerprint,summarizeFocusAttempt,compareFocusRounds,FOCUS_MODES,displayConcern,MATCH_DISPLAY_PROFILE} from '../lib/focus-engine.mjs';
@@ -41,6 +42,8 @@ export async function api(request,env){try{const db=env.DB;if(!db)return json({e
  if(path==='/api/logout'&&method==='POST'){const token=(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>x.startsWith('clearpath_session='))?.slice(18);if(token)await run(db,'DELETE FROM sessions WHERE token_hash=?',await digest(token));return json({ok:true},200,{'Set-Cookie':cookie(request,'',true)});}
  if(path==='/api/password'&&method==='POST'){if(!await verify(b.current_password,u.password_hash))fail(403,'The current password is incorrect.');const hash=await hashPassword(password(b.new_password));await db.batch([db.prepare('UPDATE users SET password_hash=?,must_change=0 WHERE id=?').bind(hash,u.id),db.prepare('DELETE FROM sessions WHERE user_id=?').bind(u.id)]);await audit(db,u.id,'change_password',u.id);return json({ok:true},200,{'Set-Cookie':cookie(request,'',true)});}
  if(u.must_change)fail(403,'Change your temporary password before continuing.');
+ if(env.CONTENT_CATALOG?.managed&&request.method==='POST'&&['/api/tests','/api/focus/pair','/api/focus/activity','/api/focus/plan'].includes(path)){role(u,'parent');fail(409,'Content is managed in GitHub. Submit content changes in a pull request, then redeploy.');}
+ const catalogResponse=await catalogApi({db,u,path,b,request,one,rows,run,fail,json,id,now,digest,content:env.CONTENT_CATALOG});if(catalogResponse)return catalogResponse;
  if(path==='/api/drafts'&&method==='GET'){role(u,'parent');return json({drafts:await rows(db,'SELECT id,definition,created_at FROM test_drafts ORDER BY created_at DESC')});}
  const extra=await coaching({db,u,path,b,request,one,rows,run,audit,assignment,attempt,updateAttempt,viewAttempt,fail,id,now,json});if(extra)return extra;
  if(path==='/api/users'&&method==='GET'){role(u,'admin','parent');return json({users:(await rows(db,u.role==='admin'?"SELECT * FROM users WHERE role!='admin' ORDER BY created_at DESC":"SELECT * FROM users WHERE role='child' ORDER BY created_at DESC")).map(publicUser)});}

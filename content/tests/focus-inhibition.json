@@ -1,0 +1,18 @@
+{
+  "id": "focus-inhibition",
+  "kind": "exercise",
+  "title": "Pause before responding",
+  "description": "A short Go/No-Go practice activity for impulse control.",
+  "revision": 1,
+  "generator": {
+    "type": "activity",
+    "config": {
+      "mode": "go_no_go",
+      "seed": "catalog-inhibition-2026-11",
+      "intent": "training",
+      "trial_count": 12,
+      "exposure_ms": 650,
+      "response_window_ms": 1800
+    }
+  }
+}

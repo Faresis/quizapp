@@ -1,32 +1,23 @@
-# Clearpath focus coach browser guide
+# Clearpath coaching workflow
 
-## Sign in
+## Author content in GitHub
 
-1. Admin opens **Manage accounts**, enters your name, username and temporary password, and chooses **Parent**.
-2. Open https://clearpath-quiz-studio.faresis.chatgpt.site/ in the browser using permitted Site access, then sign in with your Clearpath username and password.
-3. Change the temporary password when prompted. A coach is a normal parent account. All parents share the household's children, tests, reports and coaching records.
+The coach no longer needs a Clearpath login to create material. Add JSON tests, quizzes, generated exercises, session templates or courses in `content/`, open a pull request and follow [the contribution guide](../content/README.md). After review and merge, redeploy the Site from the merged source. Opening or merging a PR alone does not publish the Site.
 
-## Prepare and assign practice
+## Assign published content
 
-- **Children** lists shared child accounts and lets parents create children.
-- **Create a test** supports manual questions and validated portable JSON import. **Test library** provides existing versions, export and retained unpublished saved drafts. Publishing a new version preserves existing assignments and reports.
-- **Focus Studio** creates fresh relaxed/timed exact-match pairs and stimulus activities. Choose one primary skill, a fresh seed and comfortable timing. Training can include strategy cues; assessment suppresses cues.
-- **Assignments** assigns a published version to one or more children with a due date and timezone. Dates are reminders; attempts have their own timers. Existing assignments, completion states and reports appear here.
+A parent signs in normally and opens **Content catalog**. Choose a test/exercise, session or course, select one or more children, a due/start date and timezone, and submit. A course expands its day offsets into child-specific assignments and session dates. Each assignment keeps the selected version even if GitHub content changes later.
 
-## Run sessions
+**Courses & practice** shows assigned content and progress. **Assignments** lists due dates and attempt reports. **Test archive** preserves earlier definitions, exports and saved drafts; exporting one allows the coach to wrap it in the repository format and submit a PR.
 
-1. In **Coaching sessions**, select the child, scheduled date, session type and two or three focus rounds with the same skill.
-2. Schedule one session or use **Create 4-week plan with fresh rounds**. The plan creates two coached and three independent sessions weekly, with a monthly review in week four. It does not send notifications.
-3. The child logs in under their own account, opens **Coaching sessions**, starts the session and executes its rounds. A parent can start or finish a session, but only the assigned child answers its tests.
-4. Coached/review sessions have a fixed 25-minute maximum; independent sessions have an 8-minute maximum. Refreshing does not restart timers. Record a debrief and optional pressure ratings. Children can stop safely.
+## Execute sessions and tests
+
+Children sign in under their own accounts. **My tests**, **Coaching sessions** and **My courses** show their assigned work. Open and start a coaching session before its rounds; only the assigned child answers tests. Coached/monthly-review sessions are bounded to 25 minutes and independent sessions to 8 minutes. Refresh does not reset timers. Children may stop safely. Record a debrief and optional pressure ratings.
 
 ## Review and coach
 
-- **Reports** and **Assignments → View report** show attempt history and manual grading. Review first attempts separately from retakes.
-- **Focus Studio** compares matched relaxed/timed rounds for the same child and exports history. Timing degradation, repeated items and compromised comparisons are flagged.
-- **Monthly review** summarizes sessions, first attempts, ratings and observations, with JSON/CSV export. Add real-world context, strategy and whether it was applied independently. Monthly attempt/observation buckets use UTC.
-- Parents can mark compromised attempts void with a reason while retaining evidence. Difficulty suggestions require sufficient comparable first attempts and need adult judgment.
+Parents use **Reports** for attempt history and manual grading; **Focus Studio** for matched comparisons and focus-history exports; **Monthly review** for session summaries, ratings, observations, advisory guidance and JSON/CSV export. First attempts, retakes, degraded trials and display-quality caveats remain distinct. Compromised attempts can be voided with a reason while retaining evidence. Original scores and historical records are preserved across redeploys.
 
-Tests, versions, assignments, attempts, sessions and observations persist in the hosted database and survive browser or server restarts. Unsaved answers cannot be recovered. Browser timing is approximate; practice results are not a diagnosis.
+**Character preview** is available on the learner's device and reports bundled-font loading. The user waived actual-iPad acceptance; no device verification is claimed. Browser timing is approximate and practice scores are not a diagnosis.
 
-To remove a coach's access, admin deletes their parent account. Historical records remain. Site viewing permission is managed separately from Clearpath accounts.
+Parents share the household's children and records. GitHub content contains reusable learning material only; user accounts, enrollment dates, attempts, scores and observations remain in the hosted database. No separate coach token or external coach API is used.
