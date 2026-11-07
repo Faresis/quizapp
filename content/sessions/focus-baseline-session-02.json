@@ -1,0 +1,14 @@
+{
+  "id": "focus-baseline-session-02",
+  "kind": "session",
+  "title": "Session 2 · Matching with a gentle timer",
+  "description": "Compare fresh relaxed and timed matching rounds under matched settings.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "25 minutes maximum. Objective 2 min, controls and unscored Character preview 4 min, rounds up to 15 min, debrief 4 min. Confirm characters are clear on the learner device before starting scored work. Complete Relaxed first, then Timed (30 seconds per item). Use the learner own approach, with no strategy teaching or hints during scored rounds. Review accuracy, errors, omissions, pace and how each round felt. Record any assistance or display issues. Stop safely if uncomfortable.",
+  "rounds": [
+    "focus-baseline-02-relaxed",
+    "focus-baseline-02-timed"
+  ]
+}
