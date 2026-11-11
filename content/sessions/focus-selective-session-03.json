@@ -1,0 +1,14 @@
+{
+  "id": "focus-selective-session-03",
+  "kind": "session",
+  "title": "Session 3 · Checking longer strings",
+  "description": "Practice checking from left to right, then compare exact matching on fresh six- and eight-character strings with the same gentle timer.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "25 minutes maximum. Objective 2 min, Character preview and unscored demo 4 min, rounds up to 15 min, debrief 4 min. Confirm the characters look clear on the learner device. On a separate unscored example, show how to check from left to right in small chunks. Complete the six-character round first, then the eight-character round. Each round allows 30 seconds per item. Let the learner work independently without hints during scored items. Ask: Where did you start checking, and what did you do next? Record any help, interruptions or display issues. Stop if uncomfortable.",
+  "rounds": [
+    "focus-selective-03-6-characters",
+    "focus-selective-03-8-characters"
+  ]
+}
