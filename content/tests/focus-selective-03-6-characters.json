@@ -1,0 +1,19 @@
+{
+  "id": "focus-selective-03-6-characters",
+  "kind": "exercise",
+  "title": "Session 3 · Exact matching · 6 characters",
+  "description": "Eight fresh 6-character strings with one-character distractors and 30 seconds per item.",
+  "revision": 1,
+  "generator": {
+    "type": "focus_pair",
+    "round": "timed",
+    "config": {
+      "seed": "focus-selective-03-length-6",
+      "trial_count": 8,
+      "sequence_length": 6,
+      "seconds_per_item": 30,
+      "target_skill": "selective_attention",
+      "distractor_distance": 1
+    }
+  }
+}
