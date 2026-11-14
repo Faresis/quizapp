@@ -1,0 +1,14 @@
+{
+  "id": "focus-selective-session-04",
+  "kind": "session",
+  "title": "Session 4 · Matching in two layouts",
+  "description": "Compare continuous strings with strings displayed in two groups of four.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "25 minutes maximum. Objective 2 min, Character preview and controls 4 min, rounds up to 15 min, debrief 4 min. Check character legibility on the learner device. Complete the continuous round first, then the grouped round. Both use eight characters, four choices, one-character differences, and 30 seconds per item. In the grouped round, the space separates the two halves and appears in every choice. Let the learner choose how to check, with no strategy cue during either round. Ask how they checked each layout and record any help, interruptions or display issues. Stop if uncomfortable.",
+  "rounds": [
+    "focus-selective-04-continuous",
+    "focus-selective-04-grouped"
+  ]
+}
