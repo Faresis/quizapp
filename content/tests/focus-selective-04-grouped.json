@@ -1,0 +1,401 @@
+{
+  "id": "focus-selective-04-grouped",
+  "kind": "exercise",
+  "title": "Session 4 · Exact matching · Two groups of four",
+  "description": "Eight fresh exact matches with a space between two groups of four characters.",
+  "revision": 1,
+  "definition": {
+    "schema_version": "1.0",
+    "title": "Session 4 · Exact matching · Two groups of four",
+    "domain": "focus",
+    "intent": "assessment",
+    "instructions": "Find the exact match. Each reference is different. Take a comfortable approach; you can ask your parent to stop.",
+    "presentation": {
+      "mode": "one_at_a_time",
+      "navigation": "forward_only"
+    },
+    "timing": {
+      "test_duration_ms": null,
+      "question_duration_ms": 30000,
+      "pause_policy": "not_allowed"
+    },
+    "retry_policy": {
+      "retries_allowed": false,
+      "max_attempts": 1,
+      "cooldown_seconds": 0,
+      "report_score": "first"
+    },
+    "feedback": {
+      "reveal": "guardian_only"
+    },
+    "focus": {
+      "mode": "near_match",
+      "target_skill": "selective_attention",
+      "condition": "timed",
+      "round": "B",
+      "match_group": "near-match:focus-selective-04-grouped:8:8:AC-EF-HJ-KN-PQ-RT-UV-XY-3479:distance-1",
+      "difficulty": "length-8-distance-1-grouped-four-four",
+      "assistance": "none",
+      "source": "seeded_generator",
+      "alphabet_policy": "clear-v2",
+      "seed": "focus-selective-04-grouped",
+      "modality": "single_select",
+      "sequence_length": 8,
+      "distractor_distance": 1
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: TVXK EXNU",
+        "reference": "TVXK EXNU",
+        "options": [
+          {
+            "id": "o0",
+            "text": "TVXN EXNU"
+          },
+          {
+            "id": "o1",
+            "text": "TVXK EXKU"
+          },
+          {
+            "id": "o2",
+            "text": "TVXK EXNU"
+          },
+          {
+            "id": "o3",
+            "text": "TVXK FXNU"
+          }
+        ],
+        "answer_key": [
+          "o2"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q2",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: UEQV YK39",
+        "reference": "UEQV YK39",
+        "options": [
+          {
+            "id": "o0",
+            "text": "UEQV XK39"
+          },
+          {
+            "id": "o1",
+            "text": "UEPV YK39"
+          },
+          {
+            "id": "o2",
+            "text": "UEQV YK39"
+          },
+          {
+            "id": "o3",
+            "text": "UEQV YK33"
+          }
+        ],
+        "answer_key": [
+          "o2"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q3",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: ECAC YKK3",
+        "reference": "ECAC YKK3",
+        "options": [
+          {
+            "id": "o0",
+            "text": "ECAC YKK9"
+          },
+          {
+            "id": "o1",
+            "text": "ECAC YKK3"
+          },
+          {
+            "id": "o2",
+            "text": "ECAC YKK7"
+          },
+          {
+            "id": "o3",
+            "text": "ECAC XKK3"
+          }
+        ],
+        "answer_key": [
+          "o1"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q4",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: YKRP VUNJ",
+        "reference": "YKRP VUNJ",
+        "options": [
+          {
+            "id": "o0",
+            "text": "YKRP VUKJ"
+          },
+          {
+            "id": "o1",
+            "text": "YKRQ VUNJ"
+          },
+          {
+            "id": "o2",
+            "text": "YKRP VUNJ"
+          },
+          {
+            "id": "o3",
+            "text": "YKRP VVNJ"
+          }
+        ],
+        "answer_key": [
+          "o2"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q5",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: JC7K KKXP",
+        "reference": "JC7K KKXP",
+        "options": [
+          {
+            "id": "o0",
+            "text": "JC7K NKXP"
+          },
+          {
+            "id": "o1",
+            "text": "JC7K KNXP"
+          },
+          {
+            "id": "o2",
+            "text": "JC7K KKXP"
+          },
+          {
+            "id": "o3",
+            "text": "JC3K KKXP"
+          }
+        ],
+        "answer_key": [
+          "o2"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q6",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: TRNU JV3T",
+        "reference": "TRNU JV3T",
+        "options": [
+          {
+            "id": "o0",
+            "text": "TRNU JV7T"
+          },
+          {
+            "id": "o1",
+            "text": "TRKU JV3T"
+          },
+          {
+            "id": "o2",
+            "text": "RRNU JV3T"
+          },
+          {
+            "id": "o3",
+            "text": "TRNU JV3T"
+          }
+        ],
+        "answer_key": [
+          "o3"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q7",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: C4UR JYFX",
+        "reference": "C4UR JYFX",
+        "options": [
+          {
+            "id": "o0",
+            "text": "C4UR HYFX"
+          },
+          {
+            "id": "o1",
+            "text": "C4UR JYFX"
+          },
+          {
+            "id": "o2",
+            "text": "C4UR JYFY"
+          },
+          {
+            "id": "o3",
+            "text": "C4VR JYFX"
+          }
+        ],
+        "answer_key": [
+          "o1"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      },
+      {
+        "id": "q8",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Match this reference exactly: XTA9 QYKY",
+        "reference": "XTA9 QYKY",
+        "options": [
+          {
+            "id": "o0",
+            "text": "XTA9 QXKY"
+          },
+          {
+            "id": "o1",
+            "text": "XTA9 QYKY"
+          },
+          {
+            "id": "o2",
+            "text": "XTA7 QYKY"
+          },
+          {
+            "id": "o3",
+            "text": "XTA9 QYNY"
+          }
+        ],
+        "answer_key": [
+          "o1"
+        ],
+        "difficulty": "length-8-distance-1",
+        "skill_tags": [
+          "selective_attention"
+        ],
+        "confusion_tags": [
+          "AC",
+          "EF",
+          "HJ",
+          "KN",
+          "PQ",
+          "RT",
+          "UV",
+          "XY",
+          "3479"
+        ],
+        "explanation": "Compare every character, including visually similar ones."
+      }
+    ]
+  }
+}
