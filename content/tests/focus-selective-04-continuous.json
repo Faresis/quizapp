@@ -1,0 +1,19 @@
+{
+  "id": "focus-selective-04-continuous",
+  "kind": "exercise",
+  "title": "Session 4 · Exact matching · Continuous strings",
+  "description": "Eight fresh exact matches in the familiar continuous eight-character layout.",
+  "revision": 1,
+  "generator": {
+    "type": "focus_pair",
+    "round": "timed",
+    "config": {
+      "seed": "focus-selective-04-continuous",
+      "trial_count": 8,
+      "sequence_length": 8,
+      "seconds_per_item": 30,
+      "target_skill": "selective_attention",
+      "distractor_distance": 1
+    }
+  }
+}
