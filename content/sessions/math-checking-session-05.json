@@ -1,0 +1,14 @@
+{
+  "id": "math-checking-session-05",
+  "kind": "session",
+  "title": "Session 5 · Check the whole math answer",
+  "description": "Practice self-monitoring in mathematics through two ten-question rounds with rules supplied and a coached checking routine.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "25 min maximum. Objective 2 min: answer the exact request and preserve every term. Controls 1 min. Own-approach round up to 7 min with no hints. Then teach READ → KEEP → CHECK for 2 min using an unrelated example: a ticket costs 7 plus 2 per ride, so three rides cost 13 in total. Checklist round up to 8 min with the same checklist available, no answer-specific help. Debrief and finish 5 min. End at 25 min and record unfinished work. Ask which check changed a decision and request one concrete example. Record any help, interruptions, unclear notation, rule misunderstandings or time limits. Review category-level errors and completeness. These are two different item sets in a fixed order; practice, cueing and mathematics knowledge can affect the difference. Use the math rules supplied to explore execution, and review persistent rule errors through tutoring. This mathematics session appears in Coaching sessions under mathematics and is excluded from focus-only monthly summaries.",
+  "rounds": [
+    "math-checking-05-independent",
+    "math-checking-05-checklist"
+  ]
+}
