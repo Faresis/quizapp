@@ -1,14 +1,14 @@
 {
   "id": "math-checking-05-checklist",
   "kind": "quiz",
-  "title": "Session 5 · Math checking · Use a checking routine",
-  "description": "Ten fresh mathematics scenarios practicing complete calculations, exact instructions, boundaries, sequence indices and final answers.",
-  "revision": 1,
+  "title": "Session 5 · Focus checking · Read, keep, check",
+  "description": "Ten tasks for inspecting supplied information, preserving details and completing instructions. All values and rules are supplied.",
+  "revision": 2,
   "definition": {
-    "title": "Session 5 · Math checking · Use a checking routine",
-    "domain": "mathematics",
+    "title": "Session 5 · Focus checking · Read, keep, check",
+    "domain": "attention_practice",
     "intent": "training",
-    "instructions": "Before each answer, use READ → KEEP → CHECK. READ the exact request. KEEP every term and intermediate value. CHECK the boundary, index, units and all requested parts. Rules needed for the questions are included. Use paper if helpful.",
+    "instructions": "Every calculation and rule you need is supplied. Use READ → KEEP → CHECK. READ the exact request. KEEP all signs, numbers, terms and labels. CHECK your choice against the source and every requested part. Work at a comfortable pace.",
     "presentation": {
       "mode": "one_at_a_time",
       "navigation": "free"
@@ -29,88 +29,88 @@
     },
     "questions": [
       {
-        "id": "whole-cost",
+        "id": "copy-all-terms",
         "type": "single_select",
         "points": 1,
-        "prompt": "A kit costs $24 plus $2 per attachment. C(x) = 24 + 2x. What is the TOTAL cost for 5 attachments?",
+        "prompt": "SOURCE: 24 + 12 = 36. The calculation is already checked. Which copy preserves the WHOLE statement?",
         "options": [
           {
+            "id": "a",
+            "text": "24 + 12 = 12"
+          },
+          {
             "id": "b",
-            "text": "$34"
+            "text": "24 = 36"
           },
           {
             "id": "c",
-            "text": "$26"
+            "text": "12 = 36"
           },
           {
             "id": "d",
-            "text": "$122"
-          },
-          {
-            "id": "a",
-            "text": "$10"
+            "text": "24 + 12 = 36"
           }
         ],
         "answer_key": [
-          "b"
+          "d"
         ],
         "skill_tags": [
-          "carry_all_terms"
+          "preserve_all_terms"
         ],
-        "explanation": "Include both the fixed cost and the attachment cost."
+        "explanation": "Keep both terms and the supplied result."
       },
       {
-        "id": "outside-term",
+        "id": "copy-input",
         "type": "single_select",
         "points": 1,
-        "prompt": "Evaluate f(x) = |x|/5 + 8 at x = -15. The absolute value of a negative number is its positive distance from zero.",
+        "prompt": "SOURCE: Evaluate g(-7). Which instruction is copied exactly? You do not need to evaluate g.",
         "options": [
           {
-            "id": "c",
-            "text": "5"
-          },
-          {
-            "id": "d",
-            "text": "4.6"
-          },
-          {
             "id": "a",
-            "text": "3"
+            "text": "Evaluate g(-7)."
           },
           {
             "id": "b",
-            "text": "11"
+            "text": "Evaluate g(7)."
+          },
+          {
+            "id": "c",
+            "text": "Evaluate -g(7)."
+          },
+          {
+            "id": "d",
+            "text": "Evaluate g(-1)."
           }
         ],
         "answer_key": [
-          "b"
+          "a"
         ],
         "skill_tags": [
-          "carry_all_terms"
+          "copy_signs_and_numbers"
         ],
-        "explanation": "The addition outside the absolute value remains in the calculation."
+        "explanation": "Preserve the function name, sign and digit."
       },
       {
-        "id": "intermediate",
+        "id": "handoff",
         "type": "single_select",
         "points": 1,
-        "prompt": "For this chain, g(2) = -2, f(-2) = 6 + 8, and h(z) = 2z. Find h(f(g(2))). Use the COMPLETE value of f(-2) as the input to h.",
+        "prompt": "A checked work log says: Step A produces 8 + 11 = 19. Step B must receive the COMPLETE result of Step A. Which handoff follows the log?",
         "options": [
           {
-            "id": "d",
-            "text": "16"
-          },
-          {
             "id": "a",
-            "text": "12"
+            "text": "Pass 8 to Step B."
           },
           {
             "id": "b",
-            "text": "14"
+            "text": "Pass 11 to Step B."
           },
           {
             "id": "c",
-            "text": "28"
+            "text": "Pass 19 to Step B."
+          },
+          {
+            "id": "d",
+            "text": "Pass 8 + 19 to Step B."
           }
         ],
         "answer_key": [
@@ -119,224 +119,224 @@
         "skill_tags": [
           "preserve_intermediate_value"
         ],
-        "explanation": "Complete 6 plus the remaining constant before applying h."
+        "explanation": "The full result is supplied as 19."
       },
       {
-        "id": "range",
+        "id": "requested-field",
         "type": "single_select",
         "points": 1,
-        "prompt": "A continuous journey lasts from 0 to 12 minutes. Its distance from home takes every value from 5 to 8 miles, including both endpoints. Which describes the RANGE?",
+        "prompt": "REFERENCE CARD: Domain means input times. Range means output heights. Recorded times: 0 to 12 minutes. Recorded heights: 5 to 40 feet. The request asks for RANGE only. Which response uses the requested field?",
         "options": [
           {
             "id": "a",
-            "text": "0 ≤ t ≤ 12"
+            "text": "Input times, 0 to 12 minutes."
           },
           {
             "id": "b",
-            "text": "5 ≤ distance ≤ 8"
+            "text": "Output heights, 5 to 40 feet."
           },
           {
             "id": "c",
-            "text": "5 < distance < 8"
+            "text": "Output heights, 0 to 12 feet."
           },
           {
             "id": "d",
-            "text": "0 ≤ distance ≤ 12"
+            "text": "Input times, 5 to 40 minutes."
           }
         ],
         "answer_key": [
           "b"
         ],
         "skill_tags": [
-          "answer_requested_quantity"
+          "select_requested_information"
         ],
-        "explanation": "Range describes output distances. Domain describes input times."
+        "explanation": "Copy the output-height field."
       },
       {
-        "id": "negative-intervals",
+        "id": "boundary",
         "type": "single_select",
         "points": 1,
-        "prompt": "A graph is below the x-axis for x < -4 and for x > 1. It equals zero at those two boundary values. Which statement describes ALL x for which the function is NEGATIVE?",
+        "prompt": "COPY CARD: x < -4 OR x > 2. Copy this rule exactly. No solving is needed.",
         "options": [
           {
+            "id": "a",
+            "text": "-4 < x < 2"
+          },
+          {
             "id": "b",
-            "text": "x ≤ -4 or x ≥ 1"
+            "text": "x ≤ -4 OR x ≥ 2"
           },
           {
             "id": "c",
-            "text": "x < -4 or x > 1"
+            "text": "x < -4 AND x > 2"
           },
           {
             "id": "d",
-            "text": "x < -4 and x > 1"
-          },
-          {
-            "id": "a",
-            "text": "-4 < x < 1"
+            "text": "x < -4 OR x > 2"
           }
         ],
         "answer_key": [
-          "c"
+          "d"
         ],
         "skill_tags": [
-          "check_logic_and_boundaries"
+          "preserve_boundaries_and_logic"
         ],
-        "explanation": "Use or for two separate regions and exclude the zero values."
+        "explanation": "Preserve strict boundaries and OR."
       },
       {
-        "id": "target-term",
+        "id": "requested-index",
         "type": "single_select",
         "points": 1,
-        "prompt": "In an arithmetic sequence, a(8) = 12 and each step adds 3. Find a(12). Four steps separate these indices.",
+        "prompt": "A checked table lists a(21) = 75, a(22) = 80, a(23) = 85. The instruction says: report the 22nd term. Which answer follows it?",
         "options": [
           {
-            "id": "c",
-            "text": "48"
-          },
-          {
-            "id": "d",
-            "text": "12"
-          },
-          {
             "id": "a",
-            "text": "15"
+            "text": "80"
           },
           {
             "id": "b",
-            "text": "24"
+            "text": "75"
+          },
+          {
+            "id": "c",
+            "text": "85"
+          },
+          {
+            "id": "d",
+            "text": "22"
           }
         ],
         "answer_key": [
-          "b"
+          "a"
         ],
         "skill_tags": [
           "track_requested_index"
         ],
-        "explanation": "Start from the known term and add four increments."
+        "explanation": "Read the entry labeled a(22)."
       },
       {
-        "id": "count-terms",
+        "id": "count-label",
         "type": "single_select",
         "points": 1,
-        "prompt": "An arithmetic sequence starts at 5, increases by 7, and ends at 40. There are 5 increments between the first and last terms. How many TERMS are there?",
-        "options": [
-          {
-            "id": "d",
-            "text": "35"
-          },
-          {
-            "id": "a",
-            "text": "5"
-          },
-          {
-            "id": "b",
-            "text": "6"
-          },
-          {
-            "id": "c",
-            "text": "4"
-          }
-        ],
-        "answer_key": [
-          "b"
-        ],
-        "skill_tags": [
-          "count_intervals_and_terms"
-        ],
-        "explanation": "The starting term counts too. Terms equal increments plus one."
-      },
-      {
-        "id": "recursive",
-        "type": "single_select",
-        "points": 1,
-        "prompt": "A sequence starts at 5 and adds 7 each time. A RECURSIVE rule gives the starting term and uses the immediately previous term. Choose the recursive rule.",
+        "prompt": "A checked report contains two different fields: INCREMENTS = 35; TERMS = 36. The request asks how many TERMS. Which response copies the requested field?",
         "options": [
           {
             "id": "a",
-            "text": "a(n) = 5 + 7(n - 1)"
+            "text": "35 terms"
           },
           {
             "id": "b",
-            "text": "a(1) = 5; a(n) = a(n - 1) + 7 for n ≥ 2"
+            "text": "35 increments"
           },
           {
             "id": "c",
-            "text": "a(1) = 5; a(n) = 7(n - 1) for n ≥ 2"
+            "text": "36 terms"
           },
           {
             "id": "d",
-            "text": "a(n) = 5 × 7^(n - 1)"
-          }
-        ],
-        "answer_key": [
-          "b"
-        ],
-        "skill_tags": [
-          "follow_requested_rule_type"
-        ],
-        "explanation": "A recursive rule uses a(n - 1), the value of the previous term."
-      },
-      {
-        "id": "piecewise-boundary",
-        "type": "single_select",
-        "points": 1,
-        "prompt": "A parking rule is P(t) = 4t for 0 ≤ t < 5, and P(t) = 28 for t ≥ 5. What is P(5)? Choose the branch whose condition includes equality.",
-        "options": [
-          {
-            "id": "b",
-            "text": "28"
-          },
-          {
-            "id": "c",
-            "text": "48"
-          },
-          {
-            "id": "d",
-            "text": "No value is defined"
-          },
-          {
-            "id": "a",
-            "text": "20"
-          }
-        ],
-        "answer_key": [
-          "b"
-        ],
-        "skill_tags": [
-          "check_branch_boundary"
-        ],
-        "explanation": "At the boundary, use the branch containing ≥."
-      },
-      {
-        "id": "complete-response",
-        "type": "single_select",
-        "points": 1,
-        "prompt": "A question says: Evaluate C(5) AND explain it in context. The correct value is C(5) = 34, where C is total dollars and the input counts attachments. Which response completes BOTH requests?",
-        "options": [
-          {
-            "id": "c",
-            "text": "C(5) = 34; the kit with 5 attachments costs $34 in total."
-          },
-          {
-            "id": "d",
-            "text": "C(5) = 5; there are 34 attachments."
-          },
-          {
-            "id": "a",
-            "text": "C(5) = 34."
-          },
-          {
-            "id": "b",
-            "text": "There are 5 attachments."
+            "text": "36 increments"
           }
         ],
         "answer_key": [
           "c"
         ],
         "skill_tags": [
-          "complete_all_requested_parts"
+          "distinguish_count_labels"
         ],
-        "explanation": "Include the value, what the input means, and what the output means."
+        "explanation": "TERMS is the requested field."
+      },
+      {
+        "id": "rule-type",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "REFERENCE CARD: An explicit rule uses n directly. A recursive rule uses the previous term a(n - 1) and a starting value. The request asks for the RECURSIVE rule. Which option follows that definition?",
+        "options": [
+          {
+            "id": "a",
+            "text": "a(n) = 7 + 2(n - 1)"
+          },
+          {
+            "id": "b",
+            "text": "a(1) = 7; a(n) = a(n - 1) + 2 for n ≥ 2"
+          },
+          {
+            "id": "c",
+            "text": "a(n) = 2n + 5"
+          },
+          {
+            "id": "d",
+            "text": "a(n) = 7 × 2^(n - 1)"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "follow_rule_definition"
+        ],
+        "explanation": "The recursive option includes the start and previous term."
+      },
+      {
+        "id": "complete-answer",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "The request has TWO parts: report the supplied total, then explain it using the supplied item count. FACT CARD: total = $35; attachments = 4. Which response completes both parts accurately?",
+        "options": [
+          {
+            "id": "a",
+            "text": "There are 4 attachments."
+          },
+          {
+            "id": "b",
+            "text": "The total is $4 for 35 attachments."
+          },
+          {
+            "id": "c",
+            "text": "The total is $35."
+          },
+          {
+            "id": "d",
+            "text": "The total is $35 for 4 attachments."
+          }
+        ],
+        "answer_key": [
+          "d"
+        ],
+        "skill_tags": [
+          "complete_requested_parts"
+        ],
+        "explanation": "Include both fields with their correct meaning."
+      },
+      {
+        "id": "final-audit",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Use this rule: If a copied answer disagrees with its SOURCE, replace it with the exact source text. SOURCE: Gate 26, at 5:15. COPIED ANSWER: Gate 62, at 5:15. Which final answer follows the rule?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gate 26, at 5:15."
+          },
+          {
+            "id": "b",
+            "text": "Gate 62, at 5:15."
+          },
+          {
+            "id": "c",
+            "text": "Gate 26, at 5:51."
+          },
+          {
+            "id": "d",
+            "text": "Gate 62, at 5:51."
+          }
+        ],
+        "answer_key": [
+          "a"
+        ],
+        "skill_tags": [
+          "audit_and_correct"
+        ],
+        "explanation": "Correct the transposed gate number while preserving the time."
       }
     ]
   }
