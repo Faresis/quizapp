@@ -1,0 +1,343 @@
+{
+  "id": "math-checking-05-checklist",
+  "kind": "quiz",
+  "title": "Session 5 · Math checking · Use a checking routine",
+  "description": "Ten fresh mathematics scenarios practicing complete calculations, exact instructions, boundaries, sequence indices and final answers.",
+  "revision": 1,
+  "definition": {
+    "title": "Session 5 · Math checking · Use a checking routine",
+    "domain": "mathematics",
+    "intent": "training",
+    "instructions": "Before each answer, use READ → KEEP → CHECK. READ the exact request. KEEP every term and intermediate value. CHECK the boundary, index, units and all requested parts. Rules needed for the questions are included. Use paper if helpful.",
+    "presentation": {
+      "mode": "one_at_a_time",
+      "navigation": "free"
+    },
+    "timing": {
+      "test_duration_ms": null,
+      "question_duration_ms": null,
+      "pause_policy": "not_allowed"
+    },
+    "retry_policy": {
+      "retries_allowed": false,
+      "max_attempts": 1,
+      "cooldown_seconds": 0,
+      "report_score": "first"
+    },
+    "feedback": {
+      "reveal": "guardian_only"
+    },
+    "questions": [
+      {
+        "id": "whole-cost",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A kit costs $24 plus $2 per attachment. C(x) = 24 + 2x. What is the TOTAL cost for 5 attachments?",
+        "options": [
+          {
+            "id": "b",
+            "text": "$34"
+          },
+          {
+            "id": "c",
+            "text": "$26"
+          },
+          {
+            "id": "d",
+            "text": "$122"
+          },
+          {
+            "id": "a",
+            "text": "$10"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "carry_all_terms"
+        ],
+        "explanation": "Include both the fixed cost and the attachment cost."
+      },
+      {
+        "id": "outside-term",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "Evaluate f(x) = |x|/5 + 8 at x = -15. The absolute value of a negative number is its positive distance from zero.",
+        "options": [
+          {
+            "id": "c",
+            "text": "5"
+          },
+          {
+            "id": "d",
+            "text": "4.6"
+          },
+          {
+            "id": "a",
+            "text": "3"
+          },
+          {
+            "id": "b",
+            "text": "11"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "carry_all_terms"
+        ],
+        "explanation": "The addition outside the absolute value remains in the calculation."
+      },
+      {
+        "id": "intermediate",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "For this chain, g(2) = -2, f(-2) = 6 + 8, and h(z) = 2z. Find h(f(g(2))). Use the COMPLETE value of f(-2) as the input to h.",
+        "options": [
+          {
+            "id": "d",
+            "text": "16"
+          },
+          {
+            "id": "a",
+            "text": "12"
+          },
+          {
+            "id": "b",
+            "text": "14"
+          },
+          {
+            "id": "c",
+            "text": "28"
+          }
+        ],
+        "answer_key": [
+          "c"
+        ],
+        "skill_tags": [
+          "preserve_intermediate_value"
+        ],
+        "explanation": "Complete 6 plus the remaining constant before applying h."
+      },
+      {
+        "id": "range",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A continuous journey lasts from 0 to 12 minutes. Its distance from home takes every value from 5 to 8 miles, including both endpoints. Which describes the RANGE?",
+        "options": [
+          {
+            "id": "a",
+            "text": "0 ≤ t ≤ 12"
+          },
+          {
+            "id": "b",
+            "text": "5 ≤ distance ≤ 8"
+          },
+          {
+            "id": "c",
+            "text": "5 < distance < 8"
+          },
+          {
+            "id": "d",
+            "text": "0 ≤ distance ≤ 12"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "answer_requested_quantity"
+        ],
+        "explanation": "Range describes output distances. Domain describes input times."
+      },
+      {
+        "id": "negative-intervals",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A graph is below the x-axis for x < -4 and for x > 1. It equals zero at those two boundary values. Which statement describes ALL x for which the function is NEGATIVE?",
+        "options": [
+          {
+            "id": "b",
+            "text": "x ≤ -4 or x ≥ 1"
+          },
+          {
+            "id": "c",
+            "text": "x < -4 or x > 1"
+          },
+          {
+            "id": "d",
+            "text": "x < -4 and x > 1"
+          },
+          {
+            "id": "a",
+            "text": "-4 < x < 1"
+          }
+        ],
+        "answer_key": [
+          "c"
+        ],
+        "skill_tags": [
+          "check_logic_and_boundaries"
+        ],
+        "explanation": "Use or for two separate regions and exclude the zero values."
+      },
+      {
+        "id": "target-term",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "In an arithmetic sequence, a(8) = 12 and each step adds 3. Find a(12). Four steps separate these indices.",
+        "options": [
+          {
+            "id": "c",
+            "text": "48"
+          },
+          {
+            "id": "d",
+            "text": "12"
+          },
+          {
+            "id": "a",
+            "text": "15"
+          },
+          {
+            "id": "b",
+            "text": "24"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "track_requested_index"
+        ],
+        "explanation": "Start from the known term and add four increments."
+      },
+      {
+        "id": "count-terms",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "An arithmetic sequence starts at 5, increases by 7, and ends at 40. There are 5 increments between the first and last terms. How many TERMS are there?",
+        "options": [
+          {
+            "id": "d",
+            "text": "35"
+          },
+          {
+            "id": "a",
+            "text": "5"
+          },
+          {
+            "id": "b",
+            "text": "6"
+          },
+          {
+            "id": "c",
+            "text": "4"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "count_intervals_and_terms"
+        ],
+        "explanation": "The starting term counts too. Terms equal increments plus one."
+      },
+      {
+        "id": "recursive",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A sequence starts at 5 and adds 7 each time. A RECURSIVE rule gives the starting term and uses the immediately previous term. Choose the recursive rule.",
+        "options": [
+          {
+            "id": "a",
+            "text": "a(n) = 5 + 7(n - 1)"
+          },
+          {
+            "id": "b",
+            "text": "a(1) = 5; a(n) = a(n - 1) + 7 for n ≥ 2"
+          },
+          {
+            "id": "c",
+            "text": "a(1) = 5; a(n) = 7(n - 1) for n ≥ 2"
+          },
+          {
+            "id": "d",
+            "text": "a(n) = 5 × 7^(n - 1)"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "follow_requested_rule_type"
+        ],
+        "explanation": "A recursive rule uses a(n - 1), the value of the previous term."
+      },
+      {
+        "id": "piecewise-boundary",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A parking rule is P(t) = 4t for 0 ≤ t < 5, and P(t) = 28 for t ≥ 5. What is P(5)? Choose the branch whose condition includes equality.",
+        "options": [
+          {
+            "id": "b",
+            "text": "28"
+          },
+          {
+            "id": "c",
+            "text": "48"
+          },
+          {
+            "id": "d",
+            "text": "No value is defined"
+          },
+          {
+            "id": "a",
+            "text": "20"
+          }
+        ],
+        "answer_key": [
+          "b"
+        ],
+        "skill_tags": [
+          "check_branch_boundary"
+        ],
+        "explanation": "At the boundary, use the branch containing ≥."
+      },
+      {
+        "id": "complete-response",
+        "type": "single_select",
+        "points": 1,
+        "prompt": "A question says: Evaluate C(5) AND explain it in context. The correct value is C(5) = 34, where C is total dollars and the input counts attachments. Which response completes BOTH requests?",
+        "options": [
+          {
+            "id": "c",
+            "text": "C(5) = 34; the kit with 5 attachments costs $34 in total."
+          },
+          {
+            "id": "d",
+            "text": "C(5) = 5; there are 34 attachments."
+          },
+          {
+            "id": "a",
+            "text": "C(5) = 34."
+          },
+          {
+            "id": "b",
+            "text": "There are 5 attachments."
+          }
+        ],
+        "answer_key": [
+          "c"
+        ],
+        "skill_tags": [
+          "complete_all_requested_parts"
+        ],
+        "explanation": "Include the value, what the input means, and what the output means."
+      }
+    ]
+  }
+}
