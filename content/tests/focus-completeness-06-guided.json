@@ -1,0 +1,290 @@
+{
+  "id": "focus-completeness-06-guided",
+  "kind": "exercise",
+  "title": "Session 6 · Complete every part · With checklist",
+  "description": "Ten short typed responses practicing complete instructions using supplied everyday information.",
+  "revision": 1,
+  "definition": {
+    "title": "Session 6 · Complete every part · With checklist",
+    "domain": "attention_practice",
+    "intent": "training",
+    "instructions": "Before answering, identify every requested part. Enter them, then reread the request and check that each part is present. All information is supplied. Type only the requested words or code in the requested order, separated by spaces. Capitalization does not matter. Example format: green circle. Take a comfortable pace. You may go back to check answers before submitting.",
+    "presentation": {
+      "mode": "one_at_a_time",
+      "navigation": "free"
+    },
+    "timing": {
+      "test_duration_ms": null,
+      "question_duration_ms": null,
+      "pause_policy": "not_allowed"
+    },
+    "retry_policy": {
+      "retries_allowed": false,
+      "max_attempts": 1,
+      "cooldown_seconds": 0,
+      "report_score": "first"
+    },
+    "feedback": {
+      "reveal": "guardian_only"
+    },
+    "questions": [
+      {
+        "id": "labels",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Color = blue. Shape = star. Size = large. Write the COLOR, then the SHAPE. Use only those two words.",
+        "answer_key": [
+          "blue star",
+          "blue, star",
+          "blue,star",
+          "blue / star"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are blue star. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "pick-row",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "LIST: apple — red; pear — green; plum — purple. Write the FRUIT that is green, then its COLOR. Use only those two words.",
+        "answer_key": [
+          "pear green",
+          "pear, green",
+          "pear,green",
+          "pear / green"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are pear green. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "reorder",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "SOURCE WORDS: quiet bright soft. Write the LAST word, then the FIRST word. Use only those two words.",
+        "answer_key": [
+          "soft quiet",
+          "soft, quiet",
+          "soft,quiet",
+          "soft / quiet"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "order"
+        ],
+        "explanation": "The requested parts in order are soft quiet. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "all-three",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Tool = brush. Color = yellow. Shelf label = art. Write the TOOL, COLOR and SHELF LABEL, in that order. Use only those three words.",
+        "answer_key": [
+          "brush yellow art",
+          "brush, yellow, art",
+          "brush,yellow,art",
+          "brush / yellow / art"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "three_parts"
+        ],
+        "explanation": "The requested parts in order are brush yellow art. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-records",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "RECORDS: Pencil — short. Ruler — long. Write the SHORT object first, then the LONG object. Use only the two object names.",
+        "answer_key": [
+          "pencil ruler",
+          "pencil, ruler",
+          "pencil,ruler",
+          "pencil / ruler"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are pencil ruler. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "requested-only",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Animal = fox. Action = jumps. Place = forest. Write the ANIMAL, then its ACTION. Use only those two words.",
+        "answer_key": [
+          "fox jumps",
+          "fox, jumps",
+          "fox,jumps",
+          "fox / jumps"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "requested_fields"
+        ],
+        "explanation": "The requested parts in order are fox jumps. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "copy-code",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "SOURCE: Code = K-47. Label = silver. Write the CODE exactly, then the LABEL. Separate them with a space.",
+        "answer_key": [
+          "K-47 silver"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "preserve_details"
+        ],
+        "explanation": "The requested parts in order are K-47 silver. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-conditions",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "LIST: red square; blue circle; red triangle. Write the COLOR and SHAPE of the item that is BOTH red AND a triangle. Use only those two words.",
+        "answer_key": [
+          "red triangle",
+          "red, triangle",
+          "red,triangle",
+          "red / triangle"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "both_conditions"
+        ],
+        "explanation": "The requested parts in order are red triangle. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-notes",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "NOTE A: Drink = water. NOTE B: Container = bottle. Write the DRINK from Note A, then the CONTAINER from Note B. Use only those two words.",
+        "answer_key": [
+          "water bottle",
+          "water, bottle",
+          "water,bottle",
+          "water / bottle"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "combine_sources"
+        ],
+        "explanation": "The requested parts in order are water bottle. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "final-parts",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Name = comet. Direction = east. Color = white. Write the NAME, DIRECTION and COLOR, in that order. Use only those three words.",
+        "answer_key": [
+          "comet east white",
+          "comet, east, white",
+          "comet,east,white",
+          "comet / east / white"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "three_parts"
+        ],
+        "explanation": "The requested parts in order are comet east white. Review an equivalent response manually if formatting affected its score."
+      }
+    ]
+  }
+}
