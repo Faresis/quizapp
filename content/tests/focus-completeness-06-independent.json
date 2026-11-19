@@ -1,0 +1,290 @@
+{
+  "id": "focus-completeness-06-independent",
+  "kind": "exercise",
+  "title": "Session 6 · Complete every part · Independent application",
+  "description": "Ten short typed responses practicing complete instructions using supplied everyday information.",
+  "revision": 1,
+  "definition": {
+    "title": "Session 6 · Complete every part · Independent application",
+    "domain": "attention_practice",
+    "intent": "assessment",
+    "instructions": "Read each source and follow its request. Choose your own way to check your response. All information is supplied. Type only the requested words or code in the requested order, separated by spaces. Capitalization does not matter. Example format: green circle. Take a comfortable pace. You may go back to check answers before submitting.",
+    "presentation": {
+      "mode": "one_at_a_time",
+      "navigation": "free"
+    },
+    "timing": {
+      "test_duration_ms": null,
+      "question_duration_ms": null,
+      "pause_policy": "not_allowed"
+    },
+    "retry_policy": {
+      "retries_allowed": false,
+      "max_attempts": 1,
+      "cooldown_seconds": 0,
+      "report_score": "first"
+    },
+    "feedback": {
+      "reveal": "guardian_only"
+    },
+    "questions": [
+      {
+        "id": "labels",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Material = cotton. Color = orange. Texture = smooth. Write the MATERIAL, then the TEXTURE. Use only those two words.",
+        "answer_key": [
+          "cotton smooth",
+          "cotton, smooth",
+          "cotton,smooth",
+          "cotton / smooth"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are cotton smooth. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "pick-row",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "LIST: tennis — racket; soccer — ball; skating — skates. Write the SPORT that uses a racket, then its EQUIPMENT. Use only those two words.",
+        "answer_key": [
+          "tennis racket",
+          "tennis, racket",
+          "tennis,racket",
+          "tennis / racket"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are tennis racket. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "reorder",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "SOURCE WORDS: north calm wide. Write the LAST word, then the FIRST word. Use only those two words.",
+        "answer_key": [
+          "wide north",
+          "wide, north",
+          "wide,north",
+          "wide / north"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "order"
+        ],
+        "explanation": "The requested parts in order are wide north. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "all-three",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Object = helmet. Pattern = striped. Location = locker. Write the OBJECT, PATTERN and LOCATION, in that order. Use only those three words.",
+        "answer_key": [
+          "helmet striped locker",
+          "helmet, striped, locker",
+          "helmet,striped,locker",
+          "helmet / striped / locker"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "three_parts"
+        ],
+        "explanation": "The requested parts in order are helmet striped locker. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-records",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "RECORDS: Scarf — dry. Towel — wet. Write the WET object first, then the DRY object. Use only the two object names.",
+        "answer_key": [
+          "towel scarf",
+          "towel, scarf",
+          "towel,scarf",
+          "towel / scarf"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "two_parts"
+        ],
+        "explanation": "The requested parts in order are towel scarf. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "requested-only",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Vehicle = bicycle. Action = rolls. Surface = gravel. Write the VEHICLE, then its ACTION. Use only those two words.",
+        "answer_key": [
+          "bicycle rolls",
+          "bicycle, rolls",
+          "bicycle,rolls",
+          "bicycle / rolls"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "requested_fields"
+        ],
+        "explanation": "The requested parts in order are bicycle rolls. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "copy-code",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "SOURCE: Code = T-93. Label = bronze. Write the CODE exactly, then the LABEL. Separate them with a space.",
+        "answer_key": [
+          "T-93 bronze"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "preserve_details"
+        ],
+        "explanation": "The requested parts in order are T-93 bronze. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-conditions",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "LIST: small striped; large plain; small plain. Write the SIZE and PATTERN of the item that is BOTH small AND plain. Use only those two words.",
+        "answer_key": [
+          "small plain",
+          "small, plain",
+          "small,plain",
+          "small / plain"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "both_conditions"
+        ],
+        "explanation": "The requested parts in order are small plain. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "two-notes",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "NOTE A: Snack = crackers. NOTE B: Container = box. Write the SNACK from Note A, then the CONTAINER from Note B. Use only those two words.",
+        "answer_key": [
+          "crackers box",
+          "crackers, box",
+          "crackers,box",
+          "crackers / box"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "combine_sources"
+        ],
+        "explanation": "The requested parts in order are crackers box. Review an equivalent response manually if formatting affected its score."
+      },
+      {
+        "id": "final-parts",
+        "type": "free_text_short",
+        "points": 1,
+        "prompt": "CARD: Destination = beach. Transport = bus. Weather = sunny. Write the DESTINATION, TRANSPORT and WEATHER, in that order. Use only those three words.",
+        "answer_key": [
+          "beach bus sunny",
+          "beach, bus, sunny",
+          "beach,bus,sunny",
+          "beach / bus / sunny"
+        ],
+        "scoring": {
+          "mode": "normalized",
+          "normalization": {
+            "unicode": "NFC",
+            "case_insensitive": true,
+            "trim": true,
+            "collapse_whitespace": true
+          }
+        },
+        "skill_tags": [
+          "response_completeness",
+          "three_parts"
+        ],
+        "explanation": "The requested parts in order are beach bus sunny. Review an equivalent response manually if formatting affected its score."
+      }
+    ]
+  }
+}
