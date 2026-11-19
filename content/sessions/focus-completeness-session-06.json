@@ -1,0 +1,14 @@
+{
+  "id": "focus-completeness-session-06",
+  "kind": "session",
+  "title": "Session 6 · Complete every requested part",
+  "description": "Twenty fresh tasks practicing complete typed responses, first with a checking checklist and then independent application.",
+  "revision": 1,
+  "session_kind": "coached",
+  "collect_ratings": true,
+  "instructions": "25 min maximum. Objective 2 min: include every requested part. Model 3 min on an unscored example: source says color green, shape circle, size tiny; request asks color then shape; response green circle. Identify two requested fields, enter both, then compare with the request. Guided round up to 7 min using its checklist. Independent round up to 8 min without further reminders or answer feedback. Debrief 5 min: ask for one example of checking for a missing part, then ask about unclear wording, help and interruptions. Stop at 25 min and record unfinished work. Do not press the learner to type faster. Keep scores, omissions, missing or reordered fields and typing/formatting issues separate during review. Automated exact-field scoring accepts case and whitespace variations and some separators; manually review equivalent answers before interpreting incorrect items. All facts are supplied and every prompt states its requested fields. Different contexts and fixed order mean changes cannot be attributed solely to the checklist. The session uses attention_practice in the general runner and is excluded from focus-only monthly summaries.",
+  "rounds": [
+    "focus-completeness-06-guided",
+    "focus-completeness-06-independent"
+  ]
+}
